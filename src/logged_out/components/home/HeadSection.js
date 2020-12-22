@@ -36,8 +36,8 @@ const styles = (theme) => ({
   },
   card: {
     boxShadow: theme.shadows[4],
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
     [theme.breakpoints.up("xs")]: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
@@ -49,16 +49,16 @@ const styles = (theme) => ({
       paddingRight: theme.spacing(4),
     },
     [theme.breakpoints.up("md")]: {
-      paddingTop: theme.spacing(5.5),
-      paddingBottom: theme.spacing(5.5),
-      paddingLeft: theme.spacing(5),
-      paddingRight: theme.spacing(5),
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3),
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(3),
     },
     [theme.breakpoints.up("lg")]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-      paddingLeft: theme.spacing(6),
-      paddingRight: theme.spacing(6),
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3),
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(0),
     },
     [theme.breakpoints.down("lg")]: {
       width: "auto",
@@ -76,7 +76,7 @@ const styles = (theme) => ({
     boxShadow: theme.shadows[4],
   },
   container: {
-    marginTop: theme.spacing(6),
+    marginTop: theme.spacing(0),
     marginBottom: theme.spacing(12),
     [theme.breakpoints.down("md")]: {
       marginBottom: theme.spacing(9),
@@ -112,27 +112,28 @@ function HeadSection(props) {
             >
               <div className={classNames(classes.containerFix, "container")}>
                 <Box justifyContent="space-between" className="row">
-                  <Grid item xs={12} md={5}>
+                  <Grid item xs={12} md={4}>
                     <Box
                       display="flex"
                       flexDirection="column"
                       justifyContent="space-between"
                       height="100%"
                     >
-                      <Box mb={4}>
+                      <Box mb={1}>
                         <Typography
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          Eat Right. <br />Love Yourself.
+                          Eat Right. <br />
+                          Love Yourself.
                         </Typography>
                       </Box>
                       <div>
-                        <Box mb={2}>
+                        <Box mb={1}>
                           <Typography
                             variant={isWidthUp("lg", width) ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                           Happiness starts with healthy food.
+                            Happiness starts with healthy food.
                           </Typography>
                         </Box>
                         <Button
@@ -141,15 +142,17 @@ function HeadSection(props) {
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
-                          href="https://github.com/dunky11/react-saas-template"
+                          href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          Download from GitHub
+                          Order now
                         </Button>
                       </div>
                     </Box>
                   </Grid>
                   <Hidden smDown>
-                    <Grid item md={6}>
+                    <Grid item md={7}>
                       <ZoomImage
                         src={`${process.env.PUBLIC_URL}/images/logged_out/headerImage.jpg`}
                         className={classes.image}
