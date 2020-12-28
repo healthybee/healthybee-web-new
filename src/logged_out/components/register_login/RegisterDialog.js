@@ -10,9 +10,10 @@ import {
   withStyles,
 } from "@material-ui/core";
 import FormDialog from "../../../shared/components/FormDialog";
-import HighlightedInformation from "../../../shared/components/HighlightedInformation";
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
 import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+import { registerApi } from "../../../api/registerApi";
+import Alert from "@material-ui/lab/Alert";
 
 const styles = (theme) => ({
   link: {
@@ -36,11 +37,34 @@ function RegisterDialog(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [hasTermsOfServiceError, setHasTermsOfServiceError] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [error, setError] = useState("");
   const registerTermsCheckbox = useRef();
   const registerPassword = useRef();
   const registerPasswordRepeat = useRef();
+  const registerEmail = useRef();
 
   const register = useCallback(() => {
+    const postData = async () => {
+      try {
+        setStatus(null);
+        setIsLoading(true);
+        const res = await registerApi({
+          email: registerEmail.current.value,
+          password: registerPassword.current.value,
+          access_token: "USroAGMKeL5yhdhAVmgJZYttXFaZFOuf",
+        });
+        if (res?.data) {
+          setError("");
+          setStatus("accountCreated");
+        }
+      } catch (err) {
+        setError(err?.response?.data?.message);
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     if (!registerTermsCheckbox.current.checked) {
       setHasTermsOfServiceError(true);
       return;
@@ -51,11 +75,13 @@ function RegisterDialog(props) {
       setStatus("passwordsDontMatch");
       return;
     }
-    setStatus(null);
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+
+    if (
+      registerTermsCheckbox.current.checked &&
+      registerPassword.current.value === registerPasswordRepeat.current.value
+    ) {
+      postData();
+    }
   }, [
     setIsLoading,
     setStatus,
@@ -84,6 +110,7 @@ function RegisterDialog(props) {
             margin="normal"
             required
             fullWidth
+            inputRef={registerEmail}
             error={status === "invalidEmail"}
             label="Email Address"
             autoFocus
@@ -194,6 +221,7 @@ function RegisterDialog(props) {
               </Typography>
             }
           />
+          {error && <Alert severity="error">{error}</Alert>}
           {hasTermsOfServiceError && (
             <FormHelperText
               error
@@ -206,15 +234,11 @@ function RegisterDialog(props) {
               service.
             </FormHelperText>
           )}
-          {status === "accountCreated" ? (
-            <HighlightedInformation>
+          {status === "accountCreated" && (
+            <Alert severity="success">
               We have created your account. Please click on the link in the
               email we have sent to you before logging in.
-            </HighlightedInformation>
-          ) : (
-            <HighlightedInformation>
-              Registration is disabled until we go live.
-            </HighlightedInformation>
+            </Alert>
           )}
         </Fragment>
       }
