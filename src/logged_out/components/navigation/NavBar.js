@@ -12,8 +12,8 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FitnessCenter from "@material-ui/icons/FitnessCenter";
-import HowToRegIcon from "@material-ui/icons/HowToReg";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
+// import HowToRegIcon from "@material-ui/icons/HowToReg";
+// import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 
@@ -42,16 +42,29 @@ const styles = (theme) => ({
 function NavBar(props) {
   const {
     classes,
-    openRegisterDialog,
-    openLoginDialog,
+    // openRegisterDialog,
+    // openLoginDialog,
     handleMobileDrawerOpen,
     handleMobileDrawerClose,
     mobileDrawerOpen,
     selectedTab,
   } = props;
+
+  const onOrderNowClick = () => {
+    window.open(
+      "https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997",
+      "_blank"
+    );
+  };
+
   const menuItems = [
     {
-      link: "/",
+      name: "Order Now",
+      onClick: onOrderNowClick,
+      icon: <FitnessCenter className="text-white" />,
+    },
+    {
+      link: "/fitness-program",
       name: "Fitness Programs",
       icon: <FitnessCenter className="text-white" />,
     },
@@ -60,16 +73,16 @@ function NavBar(props) {
       name: "Blog",
       icon: <BookIcon className="text-white" />,
     },
-    {
-      name: "Register",
-      onClick: openRegisterDialog,
-      icon: <HowToRegIcon className="text-white" />,
-    },
-    {
-      name: "Login",
-      onClick: openLoginDialog,
-      icon: <LockOpenIcon className="text-white" />,
-    },
+    // {
+    //   name: "Register",
+    //   onClick: openRegisterDialog,
+    //   icon: <HowToRegIcon className="text-white" />,
+    // },
+    // {
+    //   name: "Login",
+    //   onClick: openLoginDialog,
+    //   icon: <LockOpenIcon className="text-white" />,
+    // },
   ];
   return (
     <div className={classes.root}>

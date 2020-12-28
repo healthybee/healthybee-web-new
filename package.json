@@ -23,8 +23,10 @@
     "react-dom": "^16.14.0",
     "react-dropzone": "^11.2.1",
     "react-material-ui-carousel": "^2.0.2",
+    "react-player": "^2.7.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-script-tag": "^1.1.2",
     "react-scripts": "^3.4.4",
     "recharts": "^1.8.5"
   },
