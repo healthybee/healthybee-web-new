@@ -9,7 +9,7 @@ import {
   withStyles,
   withWidth,
   isWidthUp,
-  TextField
+  TextField,
 } from "@material-ui/core";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailIcon from "@material-ui/icons/Mail";
@@ -17,7 +17,7 @@ import WaveBorder from "../../../shared/components/WaveBorder";
 import transitions from "@material-ui/core/styles/transitions";
 import ColoredButton from "../../../shared/components/ColoredButton";
 
-const styles = theme => ({
+const styles = (theme) => ({
   footerInner: {
     backgroundColor: theme.palette.common.darkBlack,
     paddingTop: theme.spacing(8),
@@ -28,62 +28,62 @@ const styles = theme => ({
       paddingTop: theme.spacing(10),
       paddingLeft: theme.spacing(16),
       paddingRight: theme.spacing(16),
-      paddingBottom: theme.spacing(10)
+      paddingBottom: theme.spacing(10),
     },
     [theme.breakpoints.up("md")]: {
       paddingTop: theme.spacing(10),
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
-      paddingBottom: theme.spacing(10)
-    }
+      paddingBottom: theme.spacing(10),
+    },
   },
   brandText: {
     fontFamily: "'Baloo Bhaijaan', cursive",
     fontWeight: 400,
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
   },
   footerLinks: {
     marginTop: theme.spacing(2.5),
     marginBot: theme.spacing(1.5),
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
   },
   infoIcon: {
     color: `${theme.palette.common.white} !important`,
-    backgroundColor: "#33383b !important"
+    backgroundColor: "#33383b !important",
   },
   socialIcon: {
     fill: theme.palette.common.white,
     backgroundColor: "#33383b",
     borderRadius: theme.shape.borderRadius,
     "&:hover": {
-      backgroundColor: theme.palette.primary.light
-    }
+      backgroundColor: theme.palette.primary.light,
+    },
   },
   link: {
     cursor: "Pointer",
     color: theme.palette.common.white,
     transition: transitions.create(["color"], {
       duration: theme.transitions.duration.shortest,
-      easing: theme.transitions.easing.easeIn
+      easing: theme.transitions.easing.easeIn,
     }),
     "&:hover": {
-      color: theme.palette.primary.light
-    }
+      color: theme.palette.primary.light,
+    },
   },
   whiteBg: {
-    backgroundColor: theme.palette.common.white
-  }
+    backgroundColor: theme.palette.common.white,
+  },
 });
 
 const infos = [
   {
     icon: <PhoneIcon />,
-    description: "+91 555 123456"
+    description: "+91-8793580502",
   },
   {
     icon: <MailIcon />,
-    description: "healthybee.fit@gmail.com"
-  }
+    description: "healthybee.fit@gmail.com",
+  },
 ];
 
 const socialIcons = [
@@ -101,7 +101,7 @@ const socialIcons = [
       </svg>
     ),
     label: "Facebook",
-    href: "https://www.facebook.com/healthybee.fit"
+    href: "https://www.facebook.com/healthybee.fit",
   },
   {
     icon: (
@@ -113,11 +113,11 @@ const socialIcons = [
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>Instagram</title>
-        <path d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z"/>
+        <path d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z" />
       </svg>
     ),
     label: "Instagram",
-    href: "https://www.instagram.com/healthybee.fit/"
+    href: "https://www.instagram.com/healthybee.fit/",
   },
 ];
 
@@ -142,7 +142,7 @@ function Footer(props) {
                     placeholder="Get in touch with us"
                     inputProps={{ "aria-label": "Get in Touch" }}
                     InputProps={{
-                      className: classes.whiteBg
+                      className: classes.whiteBg,
                     }}
                     rows={4}
                     fullWidth
@@ -194,8 +194,10 @@ function Footer(props) {
               About the Company
             </Typography>
             <Typography style={{ color: "#8f9296" }} paragraph>
-            We provide the inspirational, hygienic food need to make healthy eating a way of life. 
-            Our specially designed menu offers delicious recipes, balanced nutritional diet plans, and new ways to make healthy cuisine choices more exciting.
+              We provide the inspirational, hygienic food need to make healthy
+              eating a way of life. Our specially designed menu offers delicious
+              recipes, balanced nutritional diet plans, and new ways to make
+              healthy cuisine choices more exciting.
             </Typography>
             <Box display="flex">
               {socialIcons.map((socialIcon, index) => (
@@ -220,7 +222,7 @@ function Footer(props) {
 Footer.propTypes = {
   theme: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
-  width: PropTypes.string.isRequired
+  width: PropTypes.string.isRequired,
 };
 
 export default withWidth()(withStyles(styles, { withTheme: true })(Footer));
