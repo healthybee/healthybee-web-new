@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { Grid, Typography, isWidthUp, withWidth } from "@material-ui/core";
 import BuildIcon from "@material-ui/icons/Build";
 import ComputerIcon from "@material-ui/icons/Computer";
-import BarChartIcon from "@material-ui/icons/BarChart";
-import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import MeassageIcon from "@material-ui/icons/Message";
 import calculateSpacing from "./calculateSpacing";
@@ -15,56 +13,30 @@ const iconSize = 30;
 const features = [
   {
     color: "#00C853",
-    headline: "Feature 1",
-    text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
+    headline: "Tasty & Healthy Meals",
     icon: <BuildIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "0",
   },
   {
     color: "#6200EA",
-    headline: "Feature 2",
-    text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
+    headline: "Doorstep Delivery",
     icon: <CalendarTodayIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
   },
   {
     color: "#0091EA",
-    headline: "Feature 3",
-    text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
+    headline: "Personalized Nutritionist",
     icon: <MeassageIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0",
   },
   {
     color: "#d50000",
-    headline: "Feature 4",
-    text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
+    headline: "100% Safe & Hygenic",
     icon: <ComputerIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
-    smDelay: "200",
-  },
-  {
-    color: "#DD2C00",
-    headline: "Feature 5",
-    text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <BarChartIcon style={{ fontSize: iconSize }} />,
-    mdDelay: "200",
-    smDelay: "0",
-  },
-  {
-    color: "#64DD17",
-    headline: "Feature 6",
-    text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <HeadsetMicIcon style={{ fontSize: iconSize }} />,
-    mdDelay: "400",
     smDelay: "200",
   },
 ];
@@ -83,7 +55,7 @@ function FeatureSection(props) {
               <Grid
                 item
                 xs={6}
-                md={4}
+                md={3}
                 data-aos="zoom-in-up"
                 data-aos-delay={
                   isWidthUp("md", width) ? element.mdDelay : element.smDelay
@@ -94,7 +66,6 @@ function FeatureSection(props) {
                   Icon={element.icon}
                   color={element.color}
                   headline={element.headline}
-                  text={element.text}
                 />
               </Grid>
             ))}

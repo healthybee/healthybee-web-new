@@ -79,7 +79,7 @@ function FitnessProgramDetails(props) {
               <b>Rs.2000</b> <i>(Introductory offer price 20% off)</i>
             </li>
             <li>
-              Date: <b>19th Dec to 20th Dec</b>
+              Date: <b>All weekends (sat-sun) in January 2021</b>
             </li>
             <i>
               (Deliverable in Wakad, Baner, Hinjewadi, Dange Chowk, VishalNagar,
