@@ -14,6 +14,7 @@ import FormDialog from "../../../shared/components/FormDialog";
 import HighlightedInformation from "../../../shared/components/HighlightedInformation";
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
 import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+import { loginApi } from "../../../api/loginApi";
 
 const styles = (theme) => ({
   forgotPassword: {
@@ -51,22 +52,42 @@ function LoginDialog(props) {
   const loginPassword = useRef();
 
   const login = useCallback(() => {
+    const postData = async () => {
+      try {
+        setStatus(null);
+        setIsLoading(true);
+        const res = await loginApi({
+          email: loginEmail.current.value,
+          password: loginPassword.current.value,
+          access_token: "USroAGMKeL5yhdhAVmgJZYttXFaZFOuf",
+        });
+        if (res?.data) {
+          localStorage.setItem("auth", JSON.stringify(res.data));
+          history.push("/c/dashboard");
+
+          setStatus("accountCreated");
+        }
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     setIsLoading(true);
     setStatus(null);
-    if (loginEmail.current.value !== "test@web.com") {
+    if (!loginEmail.current.value) {
       setTimeout(() => {
         setStatus("invalidEmail");
         setIsLoading(false);
       }, 1500);
-    } else if (loginPassword.current.value !== "HaRzwc") {
+    } else if (!loginPassword.current.value) {
       setTimeout(() => {
         setStatus("invalidPassword");
         setIsLoading(false);
       }, 1500);
     } else {
-      setTimeout(() => {
-        history.push("/c/dashboard");
-      }, 150);
+      postData();
     }
   }, [setIsLoading, loginEmail, loginPassword, history, setStatus]);
 
@@ -139,16 +160,10 @@ function LoginDialog(props) {
               control={<Checkbox color="primary" />}
               label={<Typography variant="body1">Remember me</Typography>}
             />
-            {status === "verificationEmailSend" ? (
+            {status === "verificationEmailSend" && (
               <HighlightedInformation>
                 We have send instructions on how to reset your password to your
                 email address
-              </HighlightedInformation>
-            ) : (
-              <HighlightedInformation>
-                Email is: <b>test@web.com</b>
-                <br />
-                Password is: <b>HaRzwc</b>
               </HighlightedInformation>
             )}
           </Fragment>

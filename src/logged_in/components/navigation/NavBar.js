@@ -30,6 +30,7 @@ import MessagePopperButton from "./MessagePopperButton";
 import SideDrawer from "./SideDrawer";
 import Balance from "./Balance";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
+import tokenService from "../../../shared/functions/tokenService";
 
 const styles = (theme) => ({
   appBar: {
@@ -132,6 +133,7 @@ function NavBar(props) {
   const links = useRef([]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+  const user = tokenService.getUser();
 
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
@@ -274,7 +276,9 @@ function NavBar(props) {
                 <ListItemText
                   className={classes.username}
                   primary={
-                    <Typography color="textPrimary">Username</Typography>
+                    <Typography color="textPrimary">
+                      Hi, {user?.name}
+                    </Typography>
                   }
                 />
               )}
