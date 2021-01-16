@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FitnessCenter from "@material-ui/icons/FitnessCenter";
+import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
@@ -61,7 +62,7 @@ function NavBar(props) {
     {
       name: "Order Now",
       onClick: onOrderNowClick,
-      icon: <FitnessCenter className="text-white" />,
+      icon: <LocalShippingIcon className="text-white" />,
     },
     {
       link: "/fitness-program",
