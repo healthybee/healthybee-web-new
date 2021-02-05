@@ -47,8 +47,6 @@ const styles = (theme) => ({
 function NavBar(props) {
   const {
     classes,
-    openRegisterDialog,
-    openLoginDialog,
     handleMobileDrawerOpen,
     handleMobileDrawerClose,
     mobileDrawerOpen,
@@ -170,9 +168,9 @@ NavBar.propTypes = {
   handleMobileDrawerOpen: PropTypes.func,
   handleMobileDrawerClose: PropTypes.func,
   mobileDrawerOpen: PropTypes.bool,
-  selectedTab: PropTypes.string,
-  openRegisterDialog: PropTypes.func.isRequired,
-  openLoginDialog: PropTypes.func.isRequired,
+  selectedTab: PropTypes.string
+  // openRegisterDialog: PropTypes.func.isRequired,
+  // openLoginDialog: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(memo(NavBar));
