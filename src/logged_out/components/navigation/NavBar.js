@@ -26,6 +26,10 @@ const styles = (theme) => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
+    backgroundColor: "#f5a301"
+  },
+  logoImg: {
+    height: "55px"
   },
   menuButtonText: {
     fontSize: theme.typography.body1.fontSize,
@@ -95,22 +99,13 @@ function NavBar(props) {
               className={classes.noDecoration}
               onClick={handleMobileDrawerClose}
             >
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="primary"
-              >
-                Healthy
-              </Typography>
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="secondary"
-              >
-                Bee
-              </Typography>
+              <div item md={7}>
+                      <img
+                        src={`${process.env.PUBLIC_URL}/images/logo1.png`}
+                        className={props.classes.logoImg}
+                        alt="header example"
+                      />
+              </div>
             </Link>
           </div>
           <div>

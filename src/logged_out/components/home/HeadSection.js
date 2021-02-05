@@ -22,6 +22,8 @@ const styles = (theme) => ({
     },
   },
   extraLargeButton: {
+    color: "white",
+    backgroundColor: "#f5a301",
     paddingTop: theme.spacing(1.5),
     paddingBottom: theme.spacing(1.5),
     [theme.breakpoints.up("xs")]: {
@@ -32,6 +34,9 @@ const styles = (theme) => ({
       paddingTop: theme.spacing(2),
       paddingBottom: theme.spacing(2),
     },
+    '&:hover': {
+      backgroundColor: "#f5a301"
+   }
   },
   card: {
     boxShadow: theme.shadows[4],
@@ -118,12 +123,11 @@ function HeadSection(props) {
                       justifyContent="space-between"
                       height="100%"
                     >
-                      <Box mb={1}>
+                      <Box mb={1} mt={3}>
                         <Typography
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          Eat Right. <br />
-                          Love Yourself.
+                          We help you achieve your fitness goals. <br />
                         </Typography>
                       </Box>
                       <div>
@@ -137,7 +141,6 @@ function HeadSection(props) {
                         </Box>
                         <Button
                           variant="contained"
-                          color="primary"
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
