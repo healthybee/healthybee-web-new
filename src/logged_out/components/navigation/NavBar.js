@@ -12,8 +12,8 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import FitnessCenter from "@material-ui/icons/FitnessCenter";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
-import HowToRegIcon from "@material-ui/icons/HowToReg";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
+// import HowToRegIcon from "@material-ui/icons/HowToReg";
+// import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 
@@ -28,11 +28,12 @@ const styles = (theme) => ({
     backgroundColor: "#f5a301"
   },
   logoImg: {
-    height: "55px"
+    height: "55px",
+    marginTop: "12px"
   },
   menuButtonText: {
     fontSize: theme.typography.body1.fontSize,
-    fontWeight: theme.typography.h6.fontWeight,
+    fontWeight: theme.typography.h6.fontWeight
   },
   brandText: {
     fontFamily: "'Baloo Bhaijaan', cursive",
@@ -75,18 +76,18 @@ function NavBar(props) {
     {
       link: "/blog",
       name: "Blog",
-      icon: <BookIcon className="text-white" />,
-    },
-    {
-      name: "Register",
-      onClick: openRegisterDialog,
-      icon: <HowToRegIcon className="text-white" />,
-    },
-    {
-      name: "Login",
-      onClick: openLoginDialog,
-      icon: <LockOpenIcon className="text-white" />,
-    },
+      icon: <BookIcon className="text-white" />
+    }
+    // {
+    //   name: "Register",
+    //   onClick: openRegisterDialog,
+    //   icon: <HowToRegIcon className="text-white" />,
+    // },
+    // {
+    //   name: "Login",
+    //   onClick: openLoginDialog,
+    //   icon: <LockOpenIcon className="text-white" />,
+    // },
   ];
   return (
     <div className={classes.root}>
@@ -114,7 +115,7 @@ function NavBar(props) {
                 onClick={handleMobileDrawerOpen}
                 aria-label="Open Navigation"
               >
-                <MenuIcon color="primary" />
+                <MenuIcon />
               </IconButton>
             </Hidden>
             <Hidden smDown>
