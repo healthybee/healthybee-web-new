@@ -52,7 +52,7 @@ function FeatureSection(props) {
   const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
-      <Box mt={4}>
+      <Box mt={4} fontWeight={500}>
         <Typography variant="h3" align="center" gutterBottom="true">
           What You Get
         </Typography>

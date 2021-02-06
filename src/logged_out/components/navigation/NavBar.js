@@ -25,11 +25,12 @@ const styles = (theme) => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: "#f5a301"
+    backgroundColor: "#f5a301",
+    paddingBottom: "12px",
+    paddingTop: "12px"
   },
   logoImg: {
-    height: "55px",
-    marginTop: "12px"
+    height: "55px"
   },
   menuButtonText: {
     fontSize: theme.typography.body1.fontSize,
@@ -91,7 +92,7 @@ function NavBar(props) {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <div>
+          <div className={props.classes.logoContainer}>
             <Link
               to={"/"}
               className={classes.noDecoration}
@@ -99,7 +100,7 @@ function NavBar(props) {
             >
               <div item md={7}>
                       <img
-                        src={`${process.env.PUBLIC_URL}/images/logo1.png`}
+                        src={`${process.env.PUBLIC_URL}/images/HealthyBee_full_logo.png`}
                         className={props.classes.logoImg}
                         alt="header example"
                       />
