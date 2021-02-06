@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Grid, Typography, isWidthUp, withWidth } from "@material-ui/core";
+import Box from '@material-ui/core/Box';
 import calculateSpacing from "./calculateSpacing";
 import FeatureCard from "./FeatureCard";
 import { ReactComponent as HealthyMeal } from "../../../icons/healthy-eating.svg";
 import { ReactComponent as DeliveryMan } from "../../../icons/delivery-man.svg";
 import { ReactComponent as Nutritionist } from "../../../icons/nutritionist.svg";
 import { ReactComponent as Safe } from "../../../icons/safe.svg";
+import { ReactComponent as Clipboard } from "../../../icons/clipboard.svg";
 
 const features = [
   {
@@ -32,23 +34,30 @@ const features = [
   },
   {
     color: "#d50000",
+    headline: "Regular Reporting",
+    icon: <Clipboard style={{ width: "100px", height: "90px" }} />,
+    mdDelay: "0",
+    smDelay: "300",
+  },
+  {
+    color: "#d50000",
     headline: "100% Safe & Hygenic",
     icon: <Safe style={{ width: "100px", height: "90px" }} />,
     mdDelay: "0",
     smDelay: "200",
-  },
+  }
 ];
 
 function FeatureSection(props) {
   const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
-      <div className="container lg-p-top">
-        <Typography variant="h3" align="center" className="lg-mg-bottom">
+      <Box mt={7}>
+        <Typography variant="h3" align="center" gutterBottom="true">
           What You Get
         </Typography>
-        <div className="container">
-          <Grid container spacing={calculateSpacing(width)} 
+        <Box mt={5}>
+          <Grid container justify="center" spacing={calculateSpacing(width)} 
                 style={{
                   textAlign: "center"
                 }}>
@@ -56,7 +65,7 @@ function FeatureSection(props) {
               <Grid
                 item
                 xs={6}
-                md={3}
+                md={2}
                 data-aos="zoom-in-up"
                 data-aos-delay={
                   isWidthUp("md", width) ? element.mdDelay : element.smDelay
@@ -71,8 +80,8 @@ function FeatureSection(props) {
               </Grid>
             ))}
           </Grid>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </div>
   );
 }
