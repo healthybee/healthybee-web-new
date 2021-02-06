@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Container from "@material-ui/core/Container";
 import {
   Grid,
   Typography,
@@ -38,6 +39,9 @@ const styles = (theme) => ({
       backgroundColor: "#f5a301"
    }
   },
+  higlightBox: {
+    backgroundColor: theme.palette.primary.main
+  },
   card: {
     boxShadow: theme.shadows[4],
     marginLeft: theme.spacing(1),
@@ -70,7 +74,7 @@ const styles = (theme) => ({
   },
   wrapper: {
     position: "relative",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
     paddingBottom: theme.spacing(2),
   },
   image: {
@@ -106,8 +110,8 @@ function HeadSection(props) {
   const { classes, width } = props;
   return (
     <Fragment>
-      <div className={classNames("lg-p-top", classes.wrapper)}>
-        <div className={classNames("container", classes.container)}>
+      <Box pt={15} pb={6} className={classes.higlightBox}>
+        <Container>
           <Box display="flex" justifyContent="center" className="row">
             <Card
               className={classes.card}
@@ -166,8 +170,8 @@ function HeadSection(props) {
               </div>
             </Card>
           </Box>
-        </div>
-      </div>
+        </Container>
+      </Box>
     </Fragment>
   );
 }
