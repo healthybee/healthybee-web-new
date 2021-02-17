@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography, isWidthUp, withWidth } from "@material-ui/core";
+import { Grid, Typography, withWidth } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Container from "@material-ui/core/Container";
@@ -19,7 +19,6 @@ theme.typography.h3 = {
 };
 
 function DetoxProgSection(props) {
-  const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
       <Box mt={4} fontWeight={500}>
