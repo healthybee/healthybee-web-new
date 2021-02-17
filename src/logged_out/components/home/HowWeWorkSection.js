@@ -4,7 +4,7 @@ import { Grid, Typography, isWidthUp, withWidth } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import calculateSpacing from "./calculateSpacing";
-import FeatureCard from "./FeatureCard";
+import HowWeWork from "./HowWeWork";
 import { ReactComponent as HealthyMeal } from "../../../icons/healthy-eating.svg";
 import { ReactComponent as DeliveryMan } from "../../../icons/delivery-man.svg";
 import { ReactComponent as Nutritionist } from "../../../icons/nutritionist.svg";
@@ -61,14 +61,14 @@ theme.typography.h3 = {
   },
 };
 
-function FeatureSection(props) {
+function HowWeWorkSection(props) {
   const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
       <Box mt={4} fontWeight={500}>
         <ThemeProvider theme={theme}>
           <Typography variant="h3" align="center" gutterBottom="true">
-            What You Get
+            How We Work
           </Typography>
         </ThemeProvider>
         <Box mt={5}>
@@ -87,7 +87,7 @@ function FeatureSection(props) {
                 }
                 key={element.headline}
               >
-                <FeatureCard
+                <HowWeWork
                   Icon={element.icon}
                   color={element.color}
                   headline={element.headline}
@@ -101,8 +101,8 @@ function FeatureSection(props) {
   );
 }
 
-FeatureSection.propTypes = {
+HowWeWorkSection.propTypes = {
   width: PropTypes.string.isRequired,
 };
 
-export default withWidth()(FeatureSection);
+export default withWidth()(HowWeWorkSection);
