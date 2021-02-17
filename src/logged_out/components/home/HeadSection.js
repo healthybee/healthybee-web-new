@@ -40,7 +40,8 @@ const styles = (theme) => ({
    }
   },
   higlightBox: {
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+    backgroundImage: `url(${"./images/logged_out/headerImage.jpg"})`
   },
   card: {
     boxShadow: theme.shadows[4],
