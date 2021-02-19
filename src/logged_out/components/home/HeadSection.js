@@ -13,7 +13,6 @@ import {
   withWidth,
   isWidthUp,
 } from "@material-ui/core";
-import ZoomImage from "../../../shared/components/ZoomImage";
 
 const styles = (theme) => ({
   extraLargeButtonLabel: {
@@ -41,7 +40,8 @@ const styles = (theme) => ({
   },
   higlightBox: {
     backgroundColor: theme.palette.primary.main,
-    backgroundImage: `url(${"./images/logged_out/headerImage.jpg"})`
+    backgroundSize: "43%",
+    backgroundImage: `url(${"./images/logged_out/text_outline.png"})`
   },
   card: {
     boxShadow: theme.shadows[4],
@@ -160,7 +160,7 @@ function HeadSection(props) {
                   </Grid>
                   <Hidden smDown>
                     <Grid item md={7}>
-                      <ZoomImage
+                      <img
                         src={`${process.env.PUBLIC_URL}/images/logged_out/headerImage.jpg`}
                         className={classes.image}
                         alt="header example"
