@@ -40,7 +40,7 @@ const styles = (theme) => ({
   },
   higlightBox: {
     backgroundColor: theme.palette.primary.main,
-    backgroundSize: "43%",
+    backgroundSize: "20.6%",
     backgroundImage: `url(${"./images/logged_out/text_outline.png"})`
   },
   card: {
