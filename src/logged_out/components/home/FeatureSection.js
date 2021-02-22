@@ -10,8 +10,16 @@ import { ReactComponent as DeliveryMan } from "../../../icons/delivery-man.svg";
 import { ReactComponent as Nutritionist } from "../../../icons/nutritionist.svg";
 import { ReactComponent as Safe } from "../../../icons/safe.svg";
 import { ReactComponent as Clipboard } from "../../../icons/clipboard.svg";
+import { ReactComponent as Diet } from "../../../icons/diet.svg";
 
 const features = [
+  {
+    color: "#d50000",
+    headline: "100% Safe & Hygenic",
+    icon: <Safe style={{ width: "100px", height: "90px" }} />,
+    mdDelay: "0",
+    smDelay: "200",
+  },
   {
     color: "#00C853",
     headline: "Customized Meal",
@@ -35,18 +43,19 @@ const features = [
   },
   {
     color: "#d50000",
+    headline: "Fitness Program",
+    icon: <Diet style={{ width: "100px", height: "90px" }} />,
+    mdDelay: "0",
+    smDelay: "200",
+  },
+  {
+    color: "#d50000",
     headline: "Regular Reporting",
     icon: <Clipboard style={{ width: "100px", height: "90px" }} />,
     mdDelay: "0",
     smDelay: "300",
-  },
-  {
-    color: "#d50000",
-    headline: "100% Safe & Hygenic",
-    icon: <Safe style={{ width: "100px", height: "90px" }} />,
-    mdDelay: "0",
-    smDelay: "200",
   }
+  
 ];
 
 const theme = createMuiTheme();
@@ -65,7 +74,7 @@ function FeatureSection(props) {
   const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
-      <Box mt={4} fontWeight={500}>
+      <Box mt={7} fontWeight={500}>
         <ThemeProvider theme={theme}>
           <Typography variant="h3" align="center" gutterBottom="true">
             What You Get
@@ -79,6 +88,7 @@ function FeatureSection(props) {
             {features.map((element) => (
               <Grid
                 item
+                spacing={6}
                 xs={6}
                 md={2}
                 data-aos="zoom-in-up"

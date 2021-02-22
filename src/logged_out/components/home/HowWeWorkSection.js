@@ -10,6 +10,7 @@ import { ReactComponent as DeliveryMan } from "../../../icons/delivery-man.svg";
 import { ReactComponent as Nutritionist } from "../../../icons/nutritionist.svg";
 import { ReactComponent as Safe } from "../../../icons/safe.svg";
 import { ReactComponent as Clipboard } from "../../../icons/clipboard.svg";
+import { ReactComponent as Seasoning } from "../../../icons/seasoning.svg";
 
 const features = [
   {
@@ -18,6 +19,13 @@ const features = [
     icon: <HealthyMeal style={{ width: "100px", height: "90px" }}/>,
     mdDelay: "0",
     smDelay: "0",
+  },
+  {
+    color: "#d50000",
+    headline: "In-house Dressing & Sauces",
+    icon: <Seasoning style={{ width: "100px", height: "90px" }} />,
+    mdDelay: "0",
+    smDelay: "200",
   },
   {
     color: "#6200EA",
@@ -65,14 +73,14 @@ function HowWeWorkSection(props) {
   const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
-      <Box mt={4} fontWeight={500}>
+      <Box mt={7} fontWeight={500}>
         <ThemeProvider theme={theme}>
           <Typography variant="h3" align="center" gutterBottom="true">
             How We Work
           </Typography>
         </ThemeProvider>
         <Box mt={5}>
-          <Grid container justify="center" spacing={calculateSpacing(width)} 
+          <Grid container  spacing={calculateSpacing(width)} 
                 style={{
                   textAlign: "center"
                 }}>

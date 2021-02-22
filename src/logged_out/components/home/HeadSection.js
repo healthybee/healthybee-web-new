@@ -132,7 +132,7 @@ function HeadSection(props) {
                         <Typography
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          We help you achieve your fitness goals. <br />
+                          We help you to achieve your fitness goals. <br />
                         </Typography>
                       </Box>
                       <div>
