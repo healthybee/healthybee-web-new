@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import { Grid, Typography, withWidth, withStyles } from "@material-ui/core";
+import { Grid, Typography, withWidth, withStyles, Box } from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import calculateSpacing from "./calculateSpacing";
 import Testimonial from "./Testimonial";
 
@@ -39,17 +39,28 @@ const styles = (theme) => ({
   },
 });
 
+const theme = createMuiTheme();
+theme.typography.h3 = {
+  fontSize: '2.5rem',
+  '@media (min-width:600px)': {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.5rem',
+  },
+};
 function TestimonialSection(props) {
   const { width, classes } = props;
   return (
-    <div
-      className="lg-mg-top lg-mg-bottom"
+    <Box mt={7}
       style={{ backgroundColor: "#FFFFFF" }}
     >
-      <Typography variant="h3" align="center" className="lg-mg-bottom">
-        What Customers Say
-      </Typography>
-      <div className={classNames("container", classes.containerFix)}>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h3" align="center" gutterBottom="true">
+          What Customers Say
+        </Typography>
+      </ThemeProvider>
+      <div>
         <Grid
           container
           spacing={calculateSpacing(width)}
@@ -67,7 +78,7 @@ function TestimonialSection(props) {
           </Grid>
         </Grid>
       </div>
-    </div>
+    </Box>
   );
 }
 

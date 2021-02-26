@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
+import Container from "@material-ui/core/Container";
 import HeadSection from "./HeadSection";
 import FeatureSection from "./FeatureSection";
 import HowWeWorkSection from "./HowWeWorkSection";
@@ -15,11 +16,13 @@ function Home(props) {
   return (
     <Fragment>
       <HeadSection />
-      <FeatureSection />
-      <HowWeWorkSection />
-      <DetoxProgSection />
-      <TestimonialSection />
-      <ContactSection />
+      <Container fixed>
+        <FeatureSection />
+        <HowWeWorkSection />
+        <DetoxProgSection />
+        <TestimonialSection />
+        <ContactSection />
+      </Container>
     </Fragment>
   );
 }
