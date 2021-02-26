@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
-import Container from '@material-ui/core/Container';
+import Container from "@material-ui/core/Container";
 import HeadSection from "./HeadSection";
 import FeatureSection from "./FeatureSection";
 import HowWeWorkSection from "./HowWeWorkSection";
 import DetoxProgSection from "./DetoxProgSection";
 import TestimonialSection from "./TestimonialSection";
+import ContactSection from "./ContactSection";
 
 function Home(props) {
   const { selectHome } = props;
@@ -20,6 +21,7 @@ function Home(props) {
         <HowWeWorkSection />
         <DetoxProgSection />
         <TestimonialSection />
+        <ContactSection />
       </Container>
     </Fragment>
   );

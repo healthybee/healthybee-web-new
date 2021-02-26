@@ -34,14 +34,14 @@ const styles = (theme) => ({
       paddingTop: theme.spacing(2),
       paddingBottom: theme.spacing(2),
     },
-    '&:hover': {
-      backgroundColor: "#f5a301"
-   }
+    "&:hover": {
+      backgroundColor: "#f5a301",
+    },
   },
   higlightBox: {
     backgroundColor: theme.palette.primary.main,
     backgroundSize: "20.6%",
-    backgroundImage: `url(${"./images/logged_out/text_outline.png"})`
+    backgroundImage: `url(${"./images/logged_out/text_outline.png"})`,
   },
   card: {
     boxShadow: theme.shadows[4],
