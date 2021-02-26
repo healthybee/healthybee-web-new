@@ -126,7 +126,7 @@ const socialIcons = [
 function Footer(props) {
   const { classes, width } = props;
   return (
-    <footer className="lg-p-top">
+    <footer>
       <div className={classes.footerInner}>
         <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
           <Grid item xs={12} md={6} lg={4}>
