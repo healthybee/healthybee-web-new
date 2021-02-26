@@ -5,6 +5,7 @@ import FeatureSection from "./FeatureSection";
 import HowWeWorkSection from "./HowWeWorkSection";
 import DetoxProgSection from "./DetoxProgSection";
 import TestimonialSection from "./TestimonialSection";
+import ContactSection from "./ContactSection";
 
 function Home(props) {
   const { selectHome } = props;
@@ -18,6 +19,7 @@ function Home(props) {
       <HowWeWorkSection />
       <DetoxProgSection />
       <TestimonialSection />
+      <ContactSection />
     </Fragment>
   );
 }

@@ -5,17 +5,18 @@ import {
   Typography,
   Box,
   IconButton,
-  Hidden,
   withStyles,
   withWidth,
   isWidthUp,
-  TextField,
+  Container,
+  Link as MuiLink,
 } from "@material-ui/core";
-import PhoneIcon from "@material-ui/icons/Phone";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import MailIcon from "@material-ui/icons/Mail";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import transitions from "@material-ui/core/styles/transitions";
-import ColoredButton from "../../../shared/components/ColoredButton";
-
+import { Link } from "react-router-dom";
 const styles = (theme) => ({
   footerInner: {
     backgroundColor: theme.palette.common.darkBlack,
@@ -48,7 +49,7 @@ const styles = (theme) => ({
   },
   infoIcon: {
     color: `${theme.palette.common.white} !important`,
-    backgroundColor: "#33383b !important",
+    // backgroundColor: "#33383b !important",
   },
   socialIcon: {
     fill: theme.palette.common.white,
@@ -76,12 +77,14 @@ const styles = (theme) => ({
 
 const infos = [
   {
-    icon: <PhoneIcon />,
+    icon: <WhatsAppIcon />,
     description: "+91-9975690709",
+    href: "https://wa.me/919975690709",
   },
   {
     icon: <MailIcon />,
     description: "healthybee.fit@gmail.com",
+    href: "mailto:healthybee.fit@gmail.com",
   },
 ];
 
@@ -121,77 +124,67 @@ const socialIcons = [
 ];
 
 function Footer(props) {
-  const { classes, theme, width } = props;
+  const { classes, width } = props;
   return (
     <footer className="lg-p-top">
       <div className={classes.footerInner}>
         <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
           <Grid item xs={12} md={6} lg={4}>
-            <form>
-              <Box display="flex" flexDirection="column">
-                <Box mb={1}>
-                  <TextField
-                    variant="outlined"
-                    multiline
-                    placeholder="Get in touch with us"
-                    inputProps={{ "aria-label": "Get in Touch" }}
-                    InputProps={{
-                      className: classes.whiteBg,
-                    }}
-                    rows={4}
-                    fullWidth
-                    required
-                  />
-                </Box>
-                <ColoredButton
-                  color={theme.palette.common.white}
-                  variant="outlined"
-                  type="submit"
-                >
-                  Send Message
-                </ColoredButton>
+            <Box display="flex" mb={1} style={{ alignItems: "baseline" }}>
+              <Box mr={2}>
+                <IconButton className={classes.infoIcon} tabIndex={-1}>
+                  <FavoriteBorderIcon />
+                </IconButton>
               </Box>
-            </form>
+              <Box display="flex" flexDirection="column">
+                <Typography variant="h6" className="text-white">
+                  10,000+ Happy Customers
+                </Typography>
+              </Box>
+            </Box>
+            <Box display="flex" mb={1} style={{ alignItems: "baseline" }}>
+              <Box mr={2}>
+                <IconButton className={classes.infoIcon} tabIndex={-1}>
+                  <ListAltIcon />
+                </IconButton>
+              </Box>
+              <Box display="flex" flexDirection="column">
+                <Typography variant="h6" className="text-white">
+                  5,000+ Yearly Subscriptions
+                </Typography>
+              </Box>
+            </Box>
           </Grid>
-          <Hidden mdDown>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box display="flex" justifyContent="center">
-                <div>
-                  {infos.map((info, index) => (
-                    <Box display="flex" mb={1} key={index}>
+          <Grid item xs={12} md={6} lg={4}>
+            <Box display="flex">
+              <div>
+                {infos.map((info, index) => (
+                  <MuiLink href={info.href} color="inherit">
+                    <Box
+                      display="flex"
+                      mb={1}
+                      key={index}
+                      style={{ alignItems: "baseline" }}
+                    >
                       <Box mr={2}>
-                        <IconButton
-                          className={classes.infoIcon}
-                          tabIndex={-1}
-                          disabled
-                        >
+                        <IconButton className={classes.infoIcon} tabIndex={-1}>
                           {info.icon}
                         </IconButton>
                       </Box>
-                      <Box
-                        display="flex"
-                        flexDirection="column"
-                        justifyContent="center"
-                      >
+                      <Box display="flex" flexDirection="column">
                         <Typography variant="h6" className="text-white">
                           {info.description}
                         </Typography>
                       </Box>
                     </Box>
-                  ))}
-                </div>
-              </Box>
-            </Grid>
-          </Hidden>
+                  </MuiLink>
+                ))}
+              </div>
+            </Box>
+          </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <Typography variant="h6" paragraph className="text-white">
-              About the Company
-            </Typography>
-            <Typography style={{ color: "#8f9296" }} paragraph>
-              We provide the inspirational, hygienic food need to make healthy
-              eating a way of life. Our specially designed menu offers delicious
-              recipes, balanced nutritional diet plans, and new ways to make
-              healthy cuisine choices more exciting.
+              Follow us on
             </Typography>
             <Box display="flex">
               {socialIcons.map((socialIcon, index) => (
@@ -208,6 +201,29 @@ function Footer(props) {
             </Box>
           </Grid>
         </Grid>
+      </div>
+      <div
+        maxWidth="sm"
+        style={{ padding: "15px", backgroundColor: "#24282c", color: "white" }}
+      >
+        <Container>
+          <Box display="flex">
+            <Box flexGrow={1}>2021 @ HealthyBee. All rights reserved</Box>
+            <Box>
+              <MuiLink component={Link} to="/terms" color="inherit">
+                Terms & conditions
+              </MuiLink>
+              {" | "}
+              <MuiLink component={Link} to="/privacy" color="inherit">
+                Privacy Policy
+              </MuiLink>
+              {" | "}
+              <MuiLink component={Link} to="/refund" color="inherit">
+                Refund Policy
+              </MuiLink>
+            </Box>
+          </Box>
+        </Container>
       </div>
     </footer>
   );

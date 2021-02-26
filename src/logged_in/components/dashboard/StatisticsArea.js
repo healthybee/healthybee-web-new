@@ -8,7 +8,7 @@ function StatisticsArea(props) {
     CardChart &&
     data.profit.length >= 2 &&
     data.views.length >= 2 && (
-      <Grid container spacing={3}>
+      <Grid container>
         <Grid item xs={12} md={6}>
           <CardChart
             data={data.profit}
@@ -33,7 +33,7 @@ function StatisticsArea(props) {
 StatisticsArea.propTypes = {
   theme: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  CardChart: PropTypes.elementType
+  CardChart: PropTypes.elementType,
 };
 
 export default withTheme(StatisticsArea);
