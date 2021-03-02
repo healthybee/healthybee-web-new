@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, withWidth } from "@material-ui/core";
+import { Grid, Typography, withWidth } from "@material-ui/core";
 
 function Privacy(props) {
   return (
@@ -8,8 +8,8 @@ function Privacy(props) {
       <div className="container lg-p-top">
         <Grid container justify="center">
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Privacy Policy</h3>
-            <h4>
+            <Typography variant="h5">Privacy Policy</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   Your IP is logged when placing an order. This is for reasons
@@ -38,11 +38,11 @@ function Privacy(props) {
                   addresses are not linked to Personal.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Disclaimer</h3>
-            <h4>
+            <Typography variant="h5">Disclaimer</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   It is your own responsibility to ensure that you are fully
@@ -70,7 +70,7 @@ function Privacy(props) {
                   or visitors.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
         </Grid>
       </div>

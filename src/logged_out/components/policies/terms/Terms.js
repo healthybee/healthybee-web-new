@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, withWidth } from "@material-ui/core";
+import { Grid, Typography, withWidth } from "@material-ui/core";
 
 function Terms(props) {
   return (
@@ -8,8 +8,8 @@ function Terms(props) {
       <div className="container lg-p-top">
         <Grid container justify="center">
           <Grid item xs={12} sm={12} md={8}>
-            <h3>HealthyBee Service Use</h3>
-            <h4>
+            <Typography variant="h5">HealthyBee Service Use</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   User is hereby allowed to use the HealthyBee Service subject
@@ -22,11 +22,11 @@ function Terms(props) {
                   please refer our website www.HealthyBee.fit.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Our Pricing and GST impact</h3>
-            <h4>
+            <Typography variant="h5">Our Pricing and GST impact</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   GST has been slashed from 18% to 5%, however none of the Input
@@ -37,11 +37,11 @@ function Terms(props) {
                   eventually pass on the benefit to you.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Ordering</h3>
-            <h4>
+            <Typography variant="h5">Ordering</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   You agree that, any contract for the Food and Food Delivery
@@ -75,11 +75,11 @@ function Terms(props) {
                   suitable for the intended recipient.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Prices And Payment</h3>
-            <h4>
+            <Typography variant="h5">Prices And Payment</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   All prices listed on the HealthyBee App and/or Website for
@@ -135,11 +135,11 @@ function Terms(props) {
                   payment.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Delivery</h3>
-            <h4>
+            <Typography variant="h5">Delivery</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   Delivery period quoted at the time of ordering are approximate
@@ -187,11 +187,13 @@ function Terms(props) {
                   arrangements for delivery.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Personal Information And Privacy</h3>
-            <h4>
+            <Typography variant="h5">
+              Personal Information And Privacy
+            </Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   User understands and acknowledges that by choosing HealthyBee
@@ -216,12 +218,14 @@ function Terms(props) {
                   You authorize us to disclose your personal information.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
 
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Ownership Of Intellectual Property</h3>
-            <h4>
+            <Typography variant="h5">
+              Ownership Of Intellectual Property
+            </Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   All intellectual property rights of the HealthyBee, including
@@ -235,7 +239,7 @@ function Terms(props) {
                 </li>
                 <br />
               </ol>
-            </h4>
+            </Typography>
           </Grid>
         </Grid>
       </div>

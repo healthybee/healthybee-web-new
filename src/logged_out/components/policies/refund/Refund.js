@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, withWidth } from "@material-ui/core";
+import { Grid, Typography, withWidth } from "@material-ui/core";
 
 function Refund(props) {
   return (
@@ -8,8 +8,8 @@ function Refund(props) {
       <div className="container lg-p-top">
         <Grid container justify="center">
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Return Policy</h3>
-            <h4>
+            <Typography variant="h5">Return Policy</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   HealthyBee hopes that you never have to cancel or return a
@@ -51,11 +51,11 @@ function Refund(props) {
                   to be pay by user/customer.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <h3>Refunds</h3>
-            <h4>
+            <Typography variant="h5">Refunds</Typography>
+            <Typography variant="body1" color="textPrimary">
               <ol>
                 <li>
                   In case of refunds, The amount paid by you will get refunded
@@ -64,7 +64,7 @@ function Refund(props) {
                   share NEFT / RTGS details in order to transfer the money.
                 </li>
               </ol>
-            </h4>
+            </Typography>
           </Grid>
         </Grid>
       </div>
