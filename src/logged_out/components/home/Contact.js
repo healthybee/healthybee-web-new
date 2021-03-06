@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Grid, TextField, withWidth } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import transitions from "@material-ui/core/styles/transitions";
+import { feedbackApi } from "../../../api/feedbackApi";
+import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
+import Alert from "@material-ui/lab/Alert";
 
 const styles = (theme) => ({
   footerInner: {
@@ -64,15 +67,49 @@ const styles = (theme) => ({
 });
 
 function ContactSection(props) {
+  const [feedbackStatus, setFeedbackStatus] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const customerEmail = useRef();
+  const customerMobile = useRef();
+  const customerMessage = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const postData = async () => {
+      try {
+        setFeedbackStatus(null);
+        setIsLoading(true);
+        const res = await feedbackApi({
+          email: customerEmail.current.value,
+          number: customerMobile.current.value,
+          message: customerMessage.current.value,
+          access_token: "USroAGMKeL5yhdhAVmgJZYttXFaZFOuf",
+        });
+        if (res?.data) {
+          setFeedbackStatus("feedbackSent");
+        }
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    postData();
+  };
+
   return (
     <Grid item xs={12} md={6} lg={6}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Box display="flex" flexDirection="column">
           <Box mb={3}>
             <TextField
               variant="outlined"
+              name="email"
+              type="email"
               multiline
               placeholder="Email"
+              inputRef={customerEmail}
               inputProps={{ "aria-label": "Get in Touch" }}
               fullWidth
               required
@@ -81,9 +118,13 @@ function ContactSection(props) {
           <Box mb={3}>
             <TextField
               variant="outlined"
+              name="mobile"
+              type="tel"
               multiline
               placeholder="Mobile"
+              inputRef={customerMobile}
               inputProps={{ "aria-label": "Get in Touch" }}
+              pattern="[0-9]{10}"
               fullWidth
               required
             />
@@ -94,6 +135,7 @@ function ContactSection(props) {
               variant="outlined"
               multiline
               placeholder="Message"
+              inputRef={customerMessage}
               inputProps={{ "aria-label": "Get in Touch" }}
               rows={4}
               fullWidth
@@ -101,10 +143,27 @@ function ContactSection(props) {
             />
           </Box>
         </Box>
-        <Button variant="contained" color="primary">
-          Send Message
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={isLoading}
+        >
+          Send Message {isLoading && <ButtonCircularProgress />}
         </Button>
       </form>
+      {feedbackStatus === "feedbackSent" && (
+        <>
+          <br />
+          <Box alignItems="center">
+            <Box mb={3}>
+              <Alert severity="success">
+                Thank you for reaching us, we will get back to you very soon.
+              </Alert>
+            </Box>
+          </Box>
+        </>
+      )}
     </Grid>
   );
 }
