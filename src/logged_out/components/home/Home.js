@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 import HeadSection from "./HeadSection";
 import FeatureSection from "./FeatureSection";
-import HowWeWorkSection from "./HowWeWorkSection";
 import DetoxProgSection from "./DetoxProgSection";
 import TestimonialSection from "./TestimonialSection";
 import ContactSection from "./ContactSection";
+import SubscriptionSection from "./SubscriptionSection";
 
 function Home(props) {
   const { selectHome } = props;
@@ -16,11 +16,17 @@ function Home(props) {
   return (
     <Fragment>
       <HeadSection />
+      <SubscriptionSection />
       <Container fixed>
         <FeatureSection />
-        <HowWeWorkSection />
+        <br />
+        <br />
         <DetoxProgSection />
+        <br />
+        <br />
         <TestimonialSection />
+        <br />
+        <br />
         <ContactSection />
       </Container>
     </Fragment>

@@ -37,10 +37,9 @@ const styles = (theme) => ({
   },
   higlightBox: {
     backgroundColor: theme.palette.primary.main,
-    marginTop: "60px",
-    backgroundImage: `url(${"./images/logged_out/home-hero-xl.jpg"})`,
+    backgroundImage: `url(${"./images/logged_out/subscription-section.jpg"})`,
     backgroundRepeat: "no-repeat",
-    height: "140vh",
+    height: "120vh",
   },
   card: {
     boxShadow: theme.shadows[4],
@@ -112,12 +111,12 @@ function HeadSection(props) {
     <Fragment>
       <Box pt={15} pb={6} className={classes.higlightBox}>
         <div className={classNames(classes.containerFix, "container")}>
-          <Box justifyContent="space-between" className="row">
+          <Box justifyContent="flex-end" className="row">
             <Grid item xs={4} md={4}>
               <Box
                 display="flex"
                 flexDirection="column"
-                justifyContent="space-between"
+                justifyContent="center"
                 height="100%"
               >
                 <Box mb={1} mt={3}>

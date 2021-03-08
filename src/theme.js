@@ -2,7 +2,7 @@ import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
 // colors
 const primary = "#f5a301";
-const secondary = "#3E2723";
+const secondary = "#444";
 const black = "#343a40";
 const darkBlack = "#454a4e";
 const background = "#f5f5f5";
@@ -121,6 +121,12 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
+    fontFamily: `"Open Sans", "Arial", sans-serif`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    color: "#444",
   },
 });
 

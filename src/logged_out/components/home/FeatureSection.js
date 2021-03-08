@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Grid, Typography, isWidthUp, withWidth } from "@material-ui/core";
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 import calculateSpacing from "./calculateSpacing";
 import FeatureCard from "./FeatureCard";
 import { ReactComponent as HealthyMeal } from "../../../icons/healthy-eating.svg";
 import { ReactComponent as DeliveryMan } from "../../../icons/delivery-man.svg";
 import { ReactComponent as Nutritionist } from "../../../icons/nutritionist.svg";
 import { ReactComponent as Safe } from "../../../icons/safe.svg";
-import { ReactComponent as Clipboard } from "../../../icons/clipboard.svg";
-import { ReactComponent as Diet } from "../../../icons/diet.svg";
 
 const features = [
   {
@@ -23,7 +21,7 @@ const features = [
   {
     color: "#00C853",
     headline: "Customized Meal",
-    icon: <HealthyMeal style={{ width: "100px", height: "90px" }}/>,
+    icon: <HealthyMeal style={{ width: "100px", height: "90px" }} />,
     mdDelay: "0",
     smDelay: "0",
   },
@@ -37,36 +35,21 @@ const features = [
   {
     color: "#0091EA",
     headline: "Personalized Nutritionist",
-    icon: <Nutritionist style={{ width: "100px", height: "90px" }}/>,
+    icon: <Nutritionist style={{ width: "100px", height: "90px" }} />,
     mdDelay: "400",
     smDelay: "0",
   },
-  {
-    color: "#d50000",
-    headline: "Fitness Program",
-    icon: <Diet style={{ width: "100px", height: "90px" }} />,
-    mdDelay: "0",
-    smDelay: "200",
-  },
-  {
-    color: "#d50000",
-    headline: "Regular Reporting",
-    icon: <Clipboard style={{ width: "100px", height: "90px" }} />,
-    mdDelay: "0",
-    smDelay: "300",
-  }
-  
 ];
 
 const theme = createMuiTheme();
 theme.typography.h3 = {
   fontWeight: "bold",
-  fontSize: '2.5rem',
-  '@media (min-width:600px)': {
-    fontSize: '1.5rem',
+  fontSize: "2.5rem",
+  "@media (min-width:600px)": {
+    fontSize: "1.5rem",
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.5rem',
+  [theme.breakpoints.up("md")]: {
+    fontSize: "2.5rem",
   },
 };
 
@@ -81,10 +64,14 @@ function FeatureSection(props) {
           </Typography>
         </ThemeProvider>
         <Box mt={5}>
-          <Grid container justify="center" spacing={calculateSpacing(width)} 
-                style={{
-                  textAlign: "center"
-                }}>
+          <Grid
+            container
+            justify="center"
+            spacing={calculateSpacing(width)}
+            style={{
+              textAlign: "center",
+            }}
+          >
             {features.map((element) => (
               <Grid
                 item

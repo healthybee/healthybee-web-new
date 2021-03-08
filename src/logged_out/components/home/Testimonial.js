@@ -4,41 +4,28 @@ import { Paper, Typography, withStyles } from "@material-ui/core";
 
 const styles = (theme) => ({
   paper: {
-    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(6),
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
-    border: `2px solid ${theme.palette.primary.dark}`,
-    borderRadius: theme.shape.borderRadius * 2,
   },
 });
 
 function Testimonial(props) {
   var items = [
     {
-      name: "Random Name #1",
+      name: "Vishwas Kumar",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "Health bee is an amazing outlet for healthy meal.  In this restaurant verities of dishes and Facilities. Yesterday I had visited in this restaurant with my family for dinner. I am very thankful of his staff. Really good behaviour and mannerfull. His food are mouthwatering and very hygiene. I recommend too much.",
     },
     {
-      name: "Random Name #2",
+      name: "Aditya Mhatre",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "HealthyBee is an outlet serving the best and tastiest healthy food items. The quality and taste is very well maintained and balanced.",
     },
     {
-      name: "Random Name #4",
+      name: "Shivam Varma",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      name: "Random Name #5",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    },
-    {
-      name: "Random Name #1",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "It is one of the best outlet to hangout with friends. The ambience is decent and the staff is co operative.",
     },
   ];
 

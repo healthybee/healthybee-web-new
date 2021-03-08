@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography, withWidth, withStyles, Box } from "@material-ui/core";
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import {
+  Grid,
+  Typography,
+  withWidth,
+  withStyles,
+  Box,
+} from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core/styles";
 import calculateSpacing from "./calculateSpacing";
 import Testimonial from "./Testimonial";
 
@@ -41,39 +47,31 @@ const styles = (theme) => ({
 
 const theme = createMuiTheme();
 theme.typography.h3 = {
-  fontSize: '2.5rem',
-  '@media (min-width:600px)': {
-    fontSize: '1.5rem',
+  fontSize: "2.5rem",
+  "@media (min-width:600px)": {
+    fontSize: "1.5rem",
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.5rem',
+  [theme.breakpoints.up("md")]: {
+    fontSize: "2.5rem",
   },
 };
 function TestimonialSection(props) {
   const { width, classes } = props;
   return (
-    <Box mt={7}
-      style={{ backgroundColor: "#FFFFFF" }}
-    >
-      <ThemeProvider theme={theme}>
-        <Typography variant="h3" align="center" gutterBottom="true">
-          What Customers Say
-        </Typography>
-      </ThemeProvider>
+    <Box mt={7} style={{ backgroundColor: "#FFFFFF" }}>
       <div>
         <Grid
           container
           spacing={calculateSpacing(width)}
           className={classes.gridContainer}
         >
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            lg={12}
-            className={classes.cardWrapper}
-            data-aos="zoom-in-up"
-          >
+          <Grid item xs={12} md={5} sm={12}>
+            <Typography variant="h4" gutterBottom="true">
+              People are digging our meals! Hear what they are saying about
+              plant-based living.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={7} sm={12}>
             <Testimonial />
           </Grid>
         </Grid>

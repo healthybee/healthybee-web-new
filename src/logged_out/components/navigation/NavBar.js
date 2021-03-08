@@ -25,20 +25,12 @@ const styles = (theme) => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: "#f5a301",
-    paddingBottom: "12px",
-    paddingTop: "12px"
   },
   logoImg: {
-    height: "55px"
+    height: "70px",
   },
   menuButtonText: {
-    fontSize: theme.typography.body1.fontSize,
-    fontWeight: theme.typography.h6.fontWeight
-  },
-  brandText: {
-    fontFamily: "'Baloo Bhaijaan', cursive",
-    fontWeight: 400,
+    fontWeight: "600",
   },
   noDecoration: {
     textDecoration: "none !important",
@@ -75,8 +67,8 @@ function NavBar(props) {
     {
       link: "/blog",
       name: "Blog",
-      icon: <BookIcon className="text-white" />
-    }
+      icon: <BookIcon className="text-white" />,
+    },
     // {
     //   name: "Register",
     //   onClick: openRegisterDialog,
@@ -98,12 +90,12 @@ function NavBar(props) {
               className={classes.noDecoration}
               onClick={handleMobileDrawerClose}
             >
-              <div item md={7}>
-                      <img
-                        src={`${process.env.PUBLIC_URL}/images/HealthyBee_full_logo.png`}
-                        className={props.classes.logoImg}
-                        alt="header example"
-                      />
+              <div item md={7} style={{ backgroundColor: "#f5a301" }}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/HealthyBee_full_logo.png`}
+                  className={props.classes.logoImg}
+                  alt="header example"
+                />
               </div>
             </Link>
           </div>
@@ -129,7 +121,7 @@ function NavBar(props) {
                     >
                       <Button
                         color="secondary"
-                        size="large"
+                        size="medium"
                         classes={{ text: classes.menuButtonText }}
                       >
                         {element.name}
@@ -169,7 +161,7 @@ NavBar.propTypes = {
   handleMobileDrawerOpen: PropTypes.func,
   handleMobileDrawerClose: PropTypes.func,
   mobileDrawerOpen: PropTypes.bool,
-  selectedTab: PropTypes.string
+  selectedTab: PropTypes.string,
   // openRegisterDialog: PropTypes.func.isRequired,
   // openLoginDialog: PropTypes.func.isRequired,
 };
