@@ -36,11 +36,11 @@ const styles = (theme) => ({
     },
   },
   higlightBox: {
-    backgroundColor: theme.palette.primary.main,
     marginTop: "60px",
     backgroundImage: `url(${"./images/logged_out/Home_Slide_03.jpg"})`,
     backgroundRepeat: "no-repeat",
-    height: "140vh",
+    backgroundSize: "100%",
+    height: "120vh",
   },
   card: {
     boxShadow: theme.shadows[4],
