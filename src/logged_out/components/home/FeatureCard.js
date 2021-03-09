@@ -20,9 +20,7 @@ const styles = (theme) => ({
 function FeatureCard(props) {
   const { classes, Icon, headline, text } = props;
   return (
-    <Fragment style={{
-      textAlign: "center"
-    }}>
+    <Fragment>
       <div
         // We will set color and fill here, due to some prios complications
         className={classes.iconWrapper}
@@ -32,7 +30,7 @@ function FeatureCard(props) {
       <Typography variant="h6" className={classes.cardHeader} paragraph>
         {headline}
       </Typography>
-      <Typography variant="body1" color="textSecondary">
+      <Typography variant="body1" color="textPrimary">
         {text}
       </Typography>
     </Fragment>

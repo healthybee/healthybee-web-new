@@ -38,7 +38,7 @@ const styles = (theme) => ({
   higlightBox: {
     backgroundColor: theme.palette.primary.main,
     marginTop: "60px",
-    backgroundImage: `url(${"./images/logged_out/home-hero-xl.jpg"})`,
+    backgroundImage: `url(${"./images/logged_out/Home_Slide_03.jpg"})`,
     backgroundRepeat: "no-repeat",
     height: "140vh",
   },
@@ -126,17 +126,8 @@ function HeadSection(props) {
                   </Typography>
                 </Box>
                 <div>
-                  <Box mb={1}>
-                    <Typography
-                      variant={isWidthUp("lg", width) ? "h6" : "body1"}
-                      color="textSecondary"
-                    >
-                      Happiness starts with healthy food.
-                    </Typography>
-                  </Box>
                   <Button
-                    variant="contained"
-                    fullWidth
+                    variant="outlined"
                     className={classes.extraLargeButton}
                     classes={{ label: classes.extraLargeButtonLabel }}
                     href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"

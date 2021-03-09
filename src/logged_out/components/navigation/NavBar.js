@@ -27,7 +27,7 @@ const styles = (theme) => ({
     justifyContent: "space-between",
   },
   logoImg: {
-    height: "70px",
+    height: "80px",
   },
   menuButtonText: {
     fontWeight: "600",
@@ -90,9 +90,9 @@ function NavBar(props) {
               className={classes.noDecoration}
               onClick={handleMobileDrawerClose}
             >
-              <div item md={7} style={{ backgroundColor: "#f5a301" }}>
+              <div item md={7}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/HealthyBee_full_logo.png`}
+                  src={`${process.env.PUBLIC_URL}/images/logos/Horizontal_AL_150_V1.png`}
                   className={props.classes.logoImg}
                   alt="header example"
                 />

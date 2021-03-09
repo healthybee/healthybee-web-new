@@ -56,7 +56,7 @@ theme.typography.h3 = {
 function FeatureSection(props) {
   const { width } = props;
   return (
-    <div style={{ backgroundColor: "#FFFFFF" }}>
+    <div>
       <Box mt={7} fontWeight={500}>
         <ThemeProvider theme={theme}>
           <Typography variant="h3" align="center" gutterBottom="true">
@@ -66,7 +66,7 @@ function FeatureSection(props) {
         <Box mt={5}>
           <Grid
             container
-            justify="center"
+            justify="space-between"
             spacing={calculateSpacing(width)}
             style={{
               textAlign: "center",
