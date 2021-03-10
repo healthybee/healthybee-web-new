@@ -65,6 +65,11 @@ const theme = createMuiTheme({
     borderWidth: borderWidth,
   },
   overrides: {
+    MuiButton: {
+      root: {
+        textTransform: "capitalize",
+      },
+    },
     MuiExpansionPanel: {
       root: {
         position: "static",

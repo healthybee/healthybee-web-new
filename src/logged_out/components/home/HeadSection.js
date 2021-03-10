@@ -8,7 +8,6 @@ import {
   Box,
   withStyles,
   withWidth,
-  isWidthUp,
 } from "@material-ui/core";
 
 const styles = (theme) => ({
@@ -36,11 +35,11 @@ const styles = (theme) => ({
     },
   },
   higlightBox: {
-    marginTop: "60px",
-    backgroundImage: `url(${"./images/logged_out/Home_Slide_03.jpg"})`,
+    marginTop: "50",
+    backgroundImage: `url(${"./images/logged_out/HealthyBee_Homepage_V1.jpg"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100%",
-    height: "120vh",
+    height: "140vh",
   },
   card: {
     boxShadow: theme.shadows[4],
@@ -107,7 +106,7 @@ const styles = (theme) => ({
 });
 
 function HeadSection(props) {
-  const { classes, width } = props;
+  const { classes } = props;
   return (
     <Fragment>
       <Box pt={15} pb={6} className={classes.higlightBox}>
@@ -121,20 +120,43 @@ function HeadSection(props) {
                 height="100%"
               >
                 <Box mb={1} mt={3}>
-                  <Typography variant={isWidthUp("lg", width) ? "h3" : "h4"}>
-                    We help you to achieve your fitness goals. <br />
+                  <Typography
+                    variant="h3"
+                    // style={{ fontFamily: "Zilla Slab", fontSize: "4rem" }}
+                    style={{
+                      fontFamily: "Dancing Script",
+                      fontSize: "4.5rem",
+                    }}
+                  >
+                    Inculcate <br />
+                    <span
+                      style={{
+                        fontFamily: "Dancing Script",
+                        fontSize: "4rem",
+                      }}
+                    >
+                      Delicious
+                    </span>
+                    ,<br />
+                    <span>Healthy Food</span>
+                  </Typography>
+                  <br />
+                  <Typography variant="subtitle1">
+                    The convenient way to order tasty, healthy meals that will
+                    leave you wanting more!
                   </Typography>
                 </Box>
                 <div>
                   <Button
                     variant="outlined"
+                    fullwidth
                     className={classes.extraLargeButton}
                     classes={{ label: classes.extraLargeButtonLabel }}
                     href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Order now
+                    Let's Order Now
                   </Button>
                 </div>
               </Box>

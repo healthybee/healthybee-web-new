@@ -92,7 +92,7 @@ function NavBar(props) {
             >
               <div item md={7}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/logos/Horizontal_AL_150_V1.png`}
+                  src={`${process.env.PUBLIC_URL}/images/logos/Horizontal_AL_150_V2.png`}
                   className={props.classes.logoImg}
                   alt="header example"
                 />
