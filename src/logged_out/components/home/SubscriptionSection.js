@@ -36,10 +36,10 @@ const styles = (theme) => ({
     },
   },
   higlightBox: {
-    backgroundColor: theme.palette.primary.main,
     backgroundImage: `url(${"./images/logged_out/subscription-section.jpg"})`,
     backgroundRepeat: "no-repeat",
     height: "120vh",
+    backgroundSize: "100%"
   },
   card: {
     boxShadow: theme.shadows[4],
@@ -135,14 +135,12 @@ function HeadSection(props) {
                   </Box>
                   <Button
                     variant="contained"
-                    fullWidth
                     className={classes.extraLargeButton}
                     classes={{ label: classes.extraLargeButtonLabel }}
-                    href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"
-                    target="_blank"
+                    href="/subscription-plans"
                     rel="noopener noreferrer"
                   >
-                    Order now
+                    Get Started
                   </Button>
                 </div>
               </Box>

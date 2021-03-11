@@ -73,7 +73,7 @@ function HowWeWorkSection(props) {
   const { width } = props;
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
-      <Box mt={7} fontWeight={500}>
+      <Box mt={7}>
         <ThemeProvider theme={theme}>
           <Typography variant="h3" align="center" gutterBottom="true">
             How We Work

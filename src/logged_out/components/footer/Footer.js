@@ -17,6 +17,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import transitions from "@material-ui/core/styles/transitions";
 import { Link } from "react-router-dom";
+import { ReactComponent as Zomato } from "../../../icons/zomato-seeklogo.com.svg";
 const styles = (theme) => ({
   footerInner: {
     backgroundColor: theme.palette.common.darkBlack,
@@ -121,6 +122,11 @@ const socialIcons = [
     label: "Instagram",
     href: "https://www.instagram.com/healthybee.fit/",
   },
+  {
+    icon: <Zomato style={{ width: "24px", height: "24px" }} />,
+    label: "Zomato",
+    href: "https://www.instagram.com/healthybee.fit/"
+  }
 ];
 
 function Footer(props) {
