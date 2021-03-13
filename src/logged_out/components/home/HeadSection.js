@@ -39,7 +39,7 @@ const styles = (theme) => ({
     backgroundImage: `url(${"./images/logged_out/HealthyBee_Homepage_V1.jpg"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100%",
-    height: "140vh",
+    height: "115vh",
   },
   card: {
     boxShadow: theme.shadows[4],

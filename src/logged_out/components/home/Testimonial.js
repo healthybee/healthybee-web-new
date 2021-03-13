@@ -15,7 +15,7 @@ function Testimonial(props) {
     {
       name: "Vishwas Kumar",
       description:
-        "Health bee is an amazing outlet for healthy meal.  In this restaurant verities of dishes and Facilities. Yesterday I had visited in this restaurant with my family for dinner. I am very thankful of his staff. Really good behaviour and mannerfull. His food are mouthwatering and very hygiene. I recommend too much.",
+        "Health bee is an amazing outlet for healthy meal.  In this restaurant verities of dishes and Facilities.",
     },
     {
       name: "Aditya Mhatre",

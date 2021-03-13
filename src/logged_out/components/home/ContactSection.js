@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import {
   Grid,
   Typography,
   withWidth,
   ThemeProvider,
   createMuiTheme,
+  Box,
 } from "@material-ui/core";
-import calculateSpacing from "./calculateSpacing";
+import Container from "@material-ui/core/Container";
+
 import Contact from "./Contact";
 
 const theme = createMuiTheme();
@@ -23,25 +24,28 @@ theme.typography.h3 = {
 };
 
 function ContactSection(props) {
-  const { width, theme } = props;
+  // const { theme } = props;
   return (
-    <div
-      className="lg-mg-top lg-mg-bottom"
-      style={{ backgroundColor: "#FFFFFF" }}
-    >
-      <ThemeProvider theme={theme}>
-        <Typography variant="h3" align="center" gutterBottom="true">
-          Get in touch with us
-        </Typography>
-      </ThemeProvider>
-      <div className={classNames("container")}>
-        <Grid container spacing={calculateSpacing(width)} align="center">
-          <Grid item xs={12} sm={12} lg={12} data-aos="zoom-in-up">
+    <Box mt={7} style={{ backgroundColor: "#F5F5F5", padding: "20px" }}>
+      <Container fixed>
+        <Grid container>
+          <Grid item xs={12} sm={12} lg={8} data-aos="zoom-in-up">
+            <ThemeProvider theme={theme}>
+              <Typography variant="h3" gutterBottom="true">
+                Get in touch with us
+              </Typography>
+            </ThemeProvider>
             <Contact />
           </Grid>
+          <Grid item xs={12} sm={12} lg={4} data-aos="zoom-in-up">
+            <Typography variant="h4" gutterBottom="true">
+              People are digging our meals! Hear what they are saying about
+              plant-based living.
+            </Typography>
+          </Grid>
         </Grid>
-      </div>
-    </div>
+      </Container>
+    </Box>
   );
 }
 

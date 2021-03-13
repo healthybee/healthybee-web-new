@@ -108,6 +108,7 @@ function ContactSection(props) {
               name="email"
               type="email"
               multiline
+              size="small"
               placeholder="Email"
               inputRef={customerEmail}
               inputProps={{ "aria-label": "Get in Touch" }}
@@ -122,6 +123,7 @@ function ContactSection(props) {
               type="tel"
               multiline
               placeholder="Mobile"
+              size="small"
               inputRef={customerMobile}
               inputProps={{ "aria-label": "Get in Touch" }}
               pattern="[0-9]{10}"
@@ -137,7 +139,7 @@ function ContactSection(props) {
               placeholder="Message"
               inputRef={customerMessage}
               inputProps={{ "aria-label": "Get in Touch" }}
-              rows={4}
+              rows={3}
               fullWidth
               required
             />

@@ -111,16 +111,23 @@ function HeadSection(props) {
     <Fragment>
       <Box pt={15} pb={6} className={classes.higlightBox}>
         <div className={classNames(classes.containerFix, "container")}>
-          <Box justifyContent="flex-end" className="row">
+          <Box
+            className="row"
+            justifyContent="flex-end"
+            style={{
+              marginRight: "18%",
+            }}
+          >
             <Grid item xs={4} md={4}>
-              <Box
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                height="100%"
-              >
+              <Box display="flex" flexDirection="column" height="100%">
                 <Box mb={1} mt={3}>
-                  <Typography variant={isWidthUp("lg", width) ? "h3" : "h4"}>
+                  <Typography
+                    variant="h3"
+                    style={{
+                      fontFamily: "Dancing Script",
+                      fontSize: "4.5rem",
+                    }}
+                  >
                     We help you to achieve your fitness goals. <br />
                   </Typography>
                 </Box>
@@ -135,14 +142,13 @@ function HeadSection(props) {
                   </Box>
                   <Button
                     variant="contained"
-                    fullWidth
                     className={classes.extraLargeButton}
                     classes={{ label: classes.extraLargeButtonLabel }}
                     href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Order now
+                    Subscribe now
                   </Button>
                 </div>
               </Box>

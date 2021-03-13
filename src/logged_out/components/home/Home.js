@@ -23,12 +23,12 @@ function Home(props) {
         <br />
         <DetoxProgSection />
         <br />
-        <br />
+        <hr />
         <TestimonialSection />
         <br />
         <br />
-        <ContactSection />
       </Container>
+      <ContactSection />
     </Fragment>
   );
 }
