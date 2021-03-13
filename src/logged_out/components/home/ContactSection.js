@@ -29,7 +29,7 @@ function ContactSection(props) {
     <Box mt={7} style={{ backgroundColor: "#F5F5F5", padding: "20px" }}>
       <Container fixed>
         <Grid container>
-          <Grid item xs={12} sm={12} lg={8} data-aos="zoom-in-up">
+          <Grid item xs={12} sm={12} lg={6} data-aos="zoom-in-up">
             <ThemeProvider theme={theme}>
               <Typography variant="h3" gutterBottom="true">
                 Get in touch with us
