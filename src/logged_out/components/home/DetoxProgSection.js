@@ -23,7 +23,7 @@ function DetoxProgSection(props) {
       <Box mt={7} fontWeight={500}>
         <ThemeProvider theme={theme}>
           <Typography variant="h3" align="center" gutterBottom="true">
-            Detox Program
+            Fitness Programs
           </Typography>
         </ThemeProvider>
         <br />

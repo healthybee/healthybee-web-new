@@ -8,7 +8,6 @@ import {
   Box,
   withStyles,
   withWidth,
-  isWidthUp,
 } from "@material-ui/core";
 
 const styles = (theme) => ({
@@ -106,7 +105,7 @@ const styles = (theme) => ({
 });
 
 function HeadSection(props) {
-  const { classes, width } = props;
+  const { classes } = props;
   return (
     <Fragment>
       <Box pt={15} pb={6} className={classes.higlightBox}>
@@ -115,7 +114,7 @@ function HeadSection(props) {
             className="row"
             justifyContent="flex-end"
             style={{
-              marginRight: "18%",
+              marginRight: "22%",
             }}
           >
             <Grid item xs={4} md={4}>
@@ -124,20 +123,19 @@ function HeadSection(props) {
                   <Typography
                     variant="h3"
                     style={{
-                      fontFamily: "Dancing Script",
-                      fontSize: "4.5rem",
+                      fontFamily: "Quicksand",
+                      fontWeight: 500,
+                      fontSize: "3.5rem",
                     }}
                   >
-                    We help you to achieve your fitness goals. <br />
+                    Customized recipes delivered to your doorstep <br />
                   </Typography>
                 </Box>
                 <div>
                   <Box mb={1}>
-                    <Typography
-                      variant={isWidthUp("lg", width) ? "h6" : "body1"}
-                      color="textSecondary"
-                    >
-                      Happiness starts with healthy food.
+                    <Typography variant="h6" color="textSecondary">
+                      Subscription plan especially curated for your fitness
+                      needs
                     </Typography>
                   </Box>
                   <Button
@@ -147,7 +145,7 @@ function HeadSection(props) {
                     href="/subscription-plans"
                     rel="noopener noreferrer"
                   >
-                    Subscribe now
+                    Choose your plan
                   </Button>
                 </div>
               </Box>

@@ -122,28 +122,17 @@ function HeadSection(props) {
                 <Box mb={1} mt={3}>
                   <Typography
                     variant="h3"
-                    // style={{ fontFamily: "Zilla Slab", fontSize: "4rem" }}
                     style={{
-                      fontFamily: "Dancing Script",
-                      fontSize: "4.5rem",
+                      fontFamily: "Quicksand",
+                      fontWeight: 500,
+                      fontSize: "3.5rem",
                     }}
                   >
-                    Inculcate <br />
-                    <span
-                      style={{
-                        fontFamily: "Dancing Script",
-                        fontSize: "4rem",
-                      }}
-                    >
-                      Delicious
-                    </span>
-                    ,<br />
-                    <span>Healthy Food</span>
+                    We help you to achieve, your fitness goal
                   </Typography>
-                  <br />
-                  <Typography variant="subtitle1">
-                    The convenient way to order tasty, healthy meals that will
-                    leave you wanting more!
+                  <Typography variant="h6">
+                    Search for fresh, mouth-watering, & calories counted meal
+                    ends here
                   </Typography>
                 </Box>
                 <div>
