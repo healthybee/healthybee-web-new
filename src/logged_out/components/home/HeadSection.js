@@ -36,7 +36,7 @@ const styles = (theme) => ({
   },
   higlightBox: {
     marginTop: "50",
-    backgroundImage: `url(${"./images/logged_out/HealthyBee_Homepage_V1.jpg"})`,
+    backgroundImage: `url(${"./images/logged_out/4.jpeg"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100%",
     height: "115vh",
