@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Grid, Typography, withWidth } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import ReactPlayer from "react-player";
+import FitnessProgramSection from "../fitness_program/FitnessProgramSection";
 
 const theme = createMuiTheme();
 theme.typography.h3 = {
@@ -29,7 +29,7 @@ function DetoxProgSection(props) {
         <br />
         <br />
         <Grid container spacing={2}>
-          <Grid item xs={12} md={7} sm={12}>
+          <Grid item xs={12} md={6} sm={12}>
             <Typography variant="h6" gutterBottom="true">
               When we are eating, up to 80% of our energy is consumed in
               digestion. During a detox, the body no longer needs to digest, so
@@ -41,13 +41,8 @@ function DetoxProgSection(props) {
               hunger then you can eat any seasonal fruit.
             </Typography>
           </Grid>
-          <Grid item xs={12} md={5} sm={12}>
-            <ReactPlayer
-              url="https://youtu.be/vCerLmXZw7k"
-              controls={true}
-              width="100%"
-              height="340px"
-            />
+          <Grid item xs={12} md={6} sm={12}>
+            <FitnessProgramSection />
           </Grid>
         </Grid>
       </Box>
