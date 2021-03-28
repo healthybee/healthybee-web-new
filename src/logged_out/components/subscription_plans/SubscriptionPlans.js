@@ -31,11 +31,11 @@ const theme = createMuiTheme({
   overrides: {
     MuiRadio: {
       root: {
-        color: 'white',
+        color: '#7a7777',
       },
       colorSecondary: {
         '&$checked': {
-          color: 'white',
+          color: '#7a7777',
         },
       },
     },
@@ -62,17 +62,21 @@ const defaultValues = {
   RadioGroup: ""
 };
 
-function Subscription(props) {
+function Subscription() {
   const { handleSubmit, register, reset, control } = useForm({ defaultValues });
   const [data, setData] = useState(null);
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
       <form onSubmit={handleSubmit((data) => setData(data))} className="form">
-        <Header/>
+        <Header />
         <Grid container xs={12} spacing={3} className={classes.container}>
-          <Grid item xs={12} className="formsectionheading"><section><label>Fitness Goal:</label></section></Grid>
-            <Grid item xs={6}>
+          <Grid item xs={12} className="formsectionheading">
+            <section>
+              <label>Fitness Goal:</label>
+            </section>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Fitness Goal</label>
               <Controller
@@ -83,8 +87,8 @@ function Subscription(props) {
                 control={control}
               />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Diet Preference</label>
               <Controller
@@ -95,8 +99,8 @@ function Subscription(props) {
                 control={control}
               />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Meal Preference</label>
               <Controller
@@ -107,8 +111,8 @@ function Subscription(props) {
                 control={control}
               />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Meals</label>
               <Controller
@@ -120,8 +124,8 @@ function Subscription(props) {
                 control={control}
               />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Meal Duration</label>
               <Controller
@@ -132,42 +136,49 @@ function Subscription(props) {
                 control={control}
               />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Start Date</label>
               <Controller
-                as={ReactDatePicker}
                 control={control}
-                valueName="selected" // DateSelect value's name is selected
-                onChange={([selected]) => selected}
                 name="ReactDatepicker"
-                className="input"
-                placeholderText="Select date"
+                render={(props) => (
+                  <ReactDatePicker
+                    className="input"
+                    placeholderText="Select date"
+                    onChange={(e) => props.onChange(e)}
+                    selected={props.value}
+                  />
+                )}
               />
             </section>
-            </Grid>
+          </Grid>
 
-          <Grid item xs={12} className="formsectionheading"><section><label>Customer Details:</label></section></Grid>
-            <Grid item xs={6}>
+          <Grid item xs={12} className="formsectionheading">
+            <section>
+              <label>Customer Details:</label>
+            </section>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Name:</label>
               <input name="Name" className="input" ref={register} />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Phone No.:</label>
               <input name="Phoneno" className="input" ref={register} />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Age:</label>
               <input name="Age" className="input" ref={register} />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Gender: </label>
               <Controller
@@ -189,51 +200,56 @@ function Subscription(props) {
                 control={control}
               />
             </section>
-            </Grid>
-            <Grid item xs={6}>
-          <section>
-            <label>Weight:</label>
-            <input name="Weight" className="input" ref={register} />
-          </section>
           </Grid>
-            <Grid item xs={6}>
-          <section>
-            <label>Physical Activity</label>
-            <Controller
-              as={ReactSelect}
-              options={physicalactivity}
-              name="PhysicalActivity"
-              isClearable
-              control={control}
-            />
-          </section>
+          <Grid item xs={6}>
+            <section>
+              <label>Weight:</label>
+              <input name="Weight" className="input" ref={register} />
+            </section>
           </Grid>
-          
-          <Grid item xs={12} className="formsectionheading"> <section><label>Address:</label></section> </Grid>
-            <Grid item xs={6}>
-          <section>
-            <label>Building & Flat No.:</label>
-            <input name="line0" className="input" ref={register} />
-          </section>
+          <Grid item xs={6}>
+            <section>
+              <label>Physical Activity</label>
+              <Controller
+                as={ReactSelect}
+                options={physicalactivity}
+                name="PhysicalActivity"
+                isClearable
+                control={control}
+              />
+            </section>
           </Grid>
-            <Grid item xs={6}>
+
+          <Grid item xs={12} className="formsectionheading">
+            {" "}
+            <section>
+              <label>Address:</label>
+            </section>{" "}
+          </Grid>
+          <Grid item xs={6}>
+            <section>
+              <label> Flat No. & Building:</label>
+              <input name="line0" className="input" ref={register} />
+            </section>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Line1:</label>
               <input name="line1" className="input" ref={register} />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Line2:</label>
               <input name="line2" className="input" ref={register} />
             </section>
-            </Grid>
-            <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6}>
             <section>
               <label>Pin Code:</label>
               <input name="pincode" className="input" ref={register} />
             </section>
-            </Grid>
+          </Grid>
         </Grid>
         <ButtonsResult {...{ data, reset, defaultValues }} />
       </form>

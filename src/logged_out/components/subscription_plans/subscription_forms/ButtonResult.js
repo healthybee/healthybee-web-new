@@ -2,11 +2,11 @@ import React from "react";
 
 export default ({ data, reset, defaultValues }) => (
   <>
-    {/* {data && (
+     {data && (
       <pre style={{ textAlign: "left", color: "white" }}>
         {JSON.stringify(data, null, 2)}
       </pre>
-    )} */}
+    )} 
     <div className="formbtnwrapper">
         <button
         className="button buttonBlack"
