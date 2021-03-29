@@ -3,7 +3,7 @@ import React from "react";
 export default ({ data, reset, defaultValues }) => (
   <>
      {data && (
-      <pre style={{ textAlign: "left", color: "white" }}>
+      <pre style={{ textAlign: "left", color: "#000" }}>
         {JSON.stringify(data, null, 2)}
       </pre>
     )} 
