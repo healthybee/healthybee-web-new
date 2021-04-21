@@ -7,6 +7,7 @@ import Blog from "./blog/Blog";
 import BlogPost from "./blog/BlogPost";
 import FitnessProgram from "./fitness_program/FitnessProgram";
 import SubscriptionPlans from "./subscription_plans/SubscriptionPlans";
+import Subscription from "./subscription_form/Subscription";
 import Terms from "./policies/terms/Terms";
 import Refund from "./policies/refund/Refund";
 import Privacy from "./policies/privacy/Privacy";
@@ -41,6 +42,7 @@ function Routing(props) {
       <PropsRoute exact path="/privacy" component={Privacy} />
       <PropsRoute exact path="/fitness-program" component={FitnessProgram} />
       <PropsRoute exact path="/subscription-plans" component={SubscriptionPlans} />
+      <PropsRoute exact path="/subscription-form" component={Subscription} />
       <PropsRoute path="/" component={Home} selectHome={selectHome} />
     </Switch>
   );

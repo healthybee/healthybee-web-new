@@ -18,6 +18,9 @@ import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 
 const styles = (theme) => ({
+  root: {
+    marginBottom: "7%"
+  },
   appBar: {
     boxShadow: theme.shadows[6],
     backgroundColor: theme.palette.common.white,

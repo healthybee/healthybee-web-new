@@ -142,7 +142,7 @@ function HeadSection(props) {
                     variant="contained"
                     className={classes.extraLargeButton}
                     classes={{ label: classes.extraLargeButtonLabel }}
-                    href="/subscription-plans"
+                    href="/subscription-form"
                     rel="noopener noreferrer"
                   >
                     Choose your plan

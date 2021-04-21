@@ -41,3 +41,11 @@ export const physicalactivity = [
   { value: "flexi", label: "Flexibility" }
 ];
 
+export const area = [
+  { value: "baner", label: "Baner" },
+  { value: "aundh", label: "Aundh" },
+  { value: "vishalnagar", label: "Vishal Nagar" },
+  { value: "wakad", label: "Wakad" },
+  { value: "hinjewadi", label: "Hinjewadi" }
+];
+
