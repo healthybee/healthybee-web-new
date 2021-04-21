@@ -6,9 +6,7 @@ import ReactSelect from "react-select";
 import {
   RadioGroup,
   FormControlLabel,
-  ThemeProvider,
   Radio,
-  createMuiTheme,
   Grid
 } from "@material-ui/core";
 import "react-datepicker/dist/react-datepicker.css";
@@ -25,7 +23,7 @@ import {
 
 export const FormOne = ({ formContent }) => {
   const methods = useFormContext();
-  const { reset, register, control } = methods;
+  const { reset, control } = methods;
 
   useEffect(() => {
     reset({ ...formContent.one }, { errors: true });
@@ -245,7 +243,7 @@ export const FormThree = ({ formContent }) => {
 
 export const FormFour = ({ formContent }) => {
   const methods = useFormContext();
-  const { reset, register, control } = methods;
+  const { reset, register } = methods;
 
   useEffect(() => {
     reset({ ...formContent.four }, { errors: true });
