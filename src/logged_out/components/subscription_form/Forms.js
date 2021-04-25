@@ -27,7 +27,9 @@ export const FormOne = ({ formContent }) => {
 
   useEffect(() => {
     reset({ ...formContent.one }, { errors: true });
-  }, []);
+  }, 
+   // eslint-disable-next-line
+  []);
 
   return (
     <form>
@@ -126,7 +128,9 @@ export const FormTwo = ({ formContent }) => {
 
   useEffect(() => {
     reset({ ...formContent.two }, { errors: true });
-  }, []);
+  }, 
+   // eslint-disable-next-line
+  []);
 
   return (
     <form>
@@ -179,7 +183,7 @@ export const FormTwo = ({ formContent }) => {
       <Grid item xs={6}>
         <section>
           <label>Weight:</label>
-          <input name="Weight" className="input" ref={register} />
+          <input name="Weight" className="input" ref={register}/>
         </section>
       </Grid>
       <Grid item xs={6}>
@@ -204,7 +208,9 @@ export const FormThree = ({ formContent }) => {
 
   useEffect(() => {
     reset({ ...formContent.three }, { errors: true });
-  }, []);
+  }, 
+   // eslint-disable-next-line
+  []);
 
   return (
     <form>
@@ -247,7 +253,9 @@ export const FormFour = ({ formContent }) => {
 
   useEffect(() => {
     reset({ ...formContent.four }, { errors: true });
-  }, []);
+  }, 
+   // eslint-disable-next-line
+  []);
 
   return (
     <form>
