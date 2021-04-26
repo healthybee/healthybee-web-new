@@ -19,10 +19,10 @@ import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 
 const styles = (theme) => ({
   root: {
-    marginBottom: "7%"
+    marginBottom: "6%",
   },
   appBar: {
-    boxShadow: theme.shadows[6],
+    boxShadow: "none",
     backgroundColor: theme.palette.common.white,
   },
   toolbar: {
@@ -30,7 +30,7 @@ const styles = (theme) => ({
     justifyContent: "space-between",
   },
   logoImg: {
-    height: "80px",
+    height: "65px",
   },
   menuButtonText: {
     fontWeight: "600",
@@ -58,18 +58,18 @@ function NavBar(props) {
 
   const menuItems = [
     {
-      name: "Order Now",
+      name: "ORDER NOW",
       onClick: onOrderNowClick,
       icon: <LocalShippingIcon className="text-white" />,
     },
     {
       link: "/fitness-program",
-      name: "Fitness Programs",
+      name: "FITNESS PROGRAM",
       icon: <FitnessCenter className="text-white" />,
     },
     {
       link: "/blog",
-      name: "Blog",
+      name: "BLOG",
       icon: <BookIcon className="text-white" />,
     },
     // {
@@ -95,7 +95,7 @@ function NavBar(props) {
             >
               <div item md={7}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/logos/Horizontal_AL_150_V2.png`}
+                  src={`${process.env.PUBLIC_URL}/images/logos/Horizontal_logo_150_V1.png`}
                   className={props.classes.logoImg}
                   alt="header example"
                 />

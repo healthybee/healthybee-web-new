@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import {
   Grid,
   Typography,
@@ -37,10 +36,13 @@ const styles = (theme) => ({
     },
   },
   higlightBox: {
-    marginTop: "50",
-    backgroundImage: `url(${"./images/logged_out/4.jpeg"})`,
+    backgroundImage: `url(${"./images/logged_out/Home_Image_001.png"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100%",
+  },
+  container: {
+    borderTop: "5px solid lightgrey",
+    color: "#663712",
   },
   card: {
     boxShadow: theme.shadows[4],
@@ -83,24 +85,6 @@ const styles = (theme) => ({
     borderRadius: theme.shape.borderRadius,
     boxShadow: theme.shadows[4],
   },
-  container: {
-    marginTop: theme.spacing(0),
-    marginBottom: theme.spacing(12),
-    [theme.breakpoints.down("md")]: {
-      marginBottom: theme.spacing(9),
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: theme.spacing(6),
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: theme.spacing(3),
-    },
-  },
-  containerFix: {
-    [theme.breakpoints.up("md")]: {
-      maxWidth: "none !important",
-    },
-  },
   waveBorder: {
     paddingTop: theme.spacing(4),
   },
@@ -110,59 +94,56 @@ function HeadSection(props) {
   const { classes, width } = props;
   return (
     <Fragment>
-      <Box
-        pt={15}
-        pb={6}
-        className={classes.higlightBox}
-        style={
-          isWidthUp("md", width) ? { height: "115vh" } : { height: "50vh" }
-        }
-      >
-        <div className={classNames(classes.containerFix, "container")}>
-          <Box justifyContent="space-between" className="row">
-            <Hidden smDown>
-              <Grid item xs={4} md={4}>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="space-between"
-                  height="100%"
-                >
-                  <Box mb={1} mt={3}>
-                    <Typography
-                      variant="h3"
-                      style={{
-                        fontFamily: "Quicksand",
-                        fontWeight: 500,
-                        fontSize: "3.5rem",
-                      }}
-                    >
-                      We help you to achieve, your fitness goal
-                    </Typography>
-                    <Typography variant="h6">
-                      Search for fresh, mouth-watering, & calories counted meal
-                      ends here
-                    </Typography>
-                  </Box>
-                  <div>
-                    <Button
-                      variant="outlined"
-                      fullwidth
-                      className={classes.extraLargeButton}
-                      classes={{ label: classes.extraLargeButtonLabel }}
-                      href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Let's Order Now
-                    </Button>
-                  </div>
-                </Box>
-              </Grid>
-            </Hidden>
+      <Grid container className={classes.container}>
+        <Grid item xs={12} md={5} style={{ display: "flex" }}>
+          <Box
+            mb={1}
+            mt={3}
+            pl={3}
+            pr={1}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h3"
+              style={{
+                fontFamily: "Quicksand",
+                fontWeight: 500,
+                fontSize: "2rem",
+              }}
+            >
+              We help you to achieve, your fitness goal
+            </Typography>
+            <Typography variant="h6">
+              Search for fresh, mouth-watering, & calories counted meal ends
+              here
+            </Typography>
+            <Button
+              variant="outlined"
+              fullwidth
+              className={classes.extraLargeButton}
+              classes={{ label: classes.extraLargeButtonLabel }}
+              href="https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Let's Order Now
+            </Button>
           </Box>
-        </div>
-      </Box>
+        </Grid>
+        <Grid item xs={12} md={7}>
+          <Box
+            className={classes.higlightBox}
+            style={
+              isWidthUp("md", width) ? { height: "70vh" } : { height: "50vh" }
+            }
+          />
+        </Grid>
+      </Grid>
     </Fragment>
   );
 }
