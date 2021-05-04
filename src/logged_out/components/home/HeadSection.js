@@ -7,7 +7,6 @@ import {
   Box,
   withStyles,
   withWidth,
-  Hidden,
   isWidthUp,
 } from "@material-ui/core";
 
