@@ -1,42 +1,50 @@
-import React, { memo } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import {
   AppBar,
-  Toolbar,
   Button,
   Hidden,
   IconButton,
+  Toolbar,
   withStyles,
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import FitnessCenter from "@material-ui/icons/FitnessCenter";
-import LocalShippingIcon from "@material-ui/icons/LocalShipping";
+} from '@material-ui/core';
+import React, { memo } from 'react';
+
+import FitnessCenter from '@material-ui/icons/FitnessCenter';
+import { Link } from 'react-router-dom';
+import MenuIcon from '@material-ui/icons/Menu';
+import NavigationDrawer from '../../../shared/components/NavigationDrawer';
+import PropTypes from 'prop-types';
+
+// import BookIcon from '@material-ui/icons/Book';
+
+
+
+
+
+
+// import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 // import HowToRegIcon from "@material-ui/icons/HowToReg";
 // import LockOpenIcon from "@material-ui/icons/LockOpen";
-import BookIcon from "@material-ui/icons/Book";
-import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 
 const styles = (theme) => ({
   root: {
-    marginBottom: "6%",
+    marginBottom: '6%',
   },
   appBar: {
-    boxShadow: "none",
+    boxShadow: 'none',
     backgroundColor: theme.palette.common.white,
   },
   toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
+    display: 'flex',
+    justifyContent: 'space-between',
   },
   logoImg: {
-    height: "65px",
+    height: '65px',
   },
   menuButtonText: {
-    fontWeight: "600",
+    fontWeight: '600',
   },
   noDecoration: {
-    textDecoration: "none !important",
+    textDecoration: 'none !important',
   },
 });
 
@@ -49,29 +57,29 @@ function NavBar(props) {
     selectedTab,
   } = props;
 
-  const onOrderNowClick = () => {
-    window.open(
-      "https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997",
-      "_blank"
-    );
-  };
+  // const onOrderNowClick = () => {
+  //   window.open(
+  //     'https://dinein.inresto.com/wla/wla-welcome?cgId=5fa26edf42903d80ba197997',
+  //     '_blank'
+  //   );
+  // };
 
   const menuItems = [
+    // {
+    //   name: "ORDER NOW",
+    //   onClick: onOrderNowClick,
+    //   icon: <LocalShippingIcon className="text-white" />,
+    // },
     {
-      name: "ORDER NOW",
-      onClick: onOrderNowClick,
-      icon: <LocalShippingIcon className="text-white" />,
-    },
-    {
-      link: "/fitness-program",
-      name: "FITNESS PROGRAM",
+      link: '/fitness-program',
+      name: 'FITNESS PROGRAM',
       icon: <FitnessCenter className="text-white" />,
     },
-    {
-      link: "/blog",
-      name: "BLOG",
-      icon: <BookIcon className="text-white" />,
-    },
+    // {
+    //   link: '/blog',
+    //   name: 'BLOG',
+    //   icon: <BookIcon className="text-white" />,
+    // },
     // {
     //   name: "Register",
     //   onClick: openRegisterDialog,
@@ -89,7 +97,7 @@ function NavBar(props) {
         <Toolbar className={classes.toolbar}>
           <div className={props.classes.logoContainer}>
             <Link
-              to={"/"}
+              to={'/'}
               className={classes.noDecoration}
               onClick={handleMobileDrawerClose}
             >

@@ -1,86 +1,86 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import {
+  Box,
   Grid,
   Typography,
-  Button,
-  Box,
+  isWidthUp,
   withStyles,
   withWidth,
-  isWidthUp,
-} from "@material-ui/core";
+} from '@material-ui/core';
+import React, { Fragment } from 'react';
+
+import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
   extraLargeButtonLabel: {
     fontSize: theme.typography.body1.fontSize,
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: theme.typography.h6.fontSize,
     },
   },
   extraLargeButton: {
-    color: "white",
-    backgroundColor: "#f5a301",
+    color: 'white',
+    backgroundColor: '#f5a301',
     paddingTop: theme.spacing(1.5),
     paddingBottom: theme.spacing(1.5),
-    [theme.breakpoints.up("xs")]: {
+    [theme.breakpoints.up('xs')]: {
       paddingTop: theme.spacing(1),
       paddingBottom: theme.spacing(1),
     },
-    [theme.breakpoints.up("lg")]: {
+    [theme.breakpoints.up('lg')]: {
       paddingTop: theme.spacing(2),
       paddingBottom: theme.spacing(2),
     },
-    "&:hover": {
-      backgroundColor: "#f5a301",
+    '&:hover': {
+      backgroundColor: '#f5a301',
     },
   },
   higlightBox: {
-    backgroundImage: `url(${"./images/logged_out/Home_Image_001.png"})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "100%",
+    backgroundImage: `url(${'./images/logged_out/Home_Image_001.png'})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
   },
   container: {
-    borderTop: "5px solid lightgrey",
-    color: "#663712",
+    borderTop: '5px solid lightgrey',
+    color: '#663712',
   },
   card: {
     boxShadow: theme.shadows[4],
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    [theme.breakpoints.up("xs")]: {
+    [theme.breakpoints.up('xs')]: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
     },
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up('sm')]: {
       paddingTop: theme.spacing(5),
       paddingBottom: theme.spacing(5),
       paddingLeft: theme.spacing(4),
       paddingRight: theme.spacing(4),
     },
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
     },
-    [theme.breakpoints.up("lg")]: {
+    [theme.breakpoints.up('lg')]: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(0),
     },
-    [theme.breakpoints.down("lg")]: {
-      width: "auto",
+    [theme.breakpoints.down('lg')]: {
+      width: 'auto',
     },
   },
   wrapper: {
-    position: "relative",
+    position: 'relative',
     backgroundColor: theme.palette.primary.main,
     paddingBottom: theme.spacing(2),
   },
   image: {
-    maxWidth: "100%",
-    verticalAlign: "middle",
+    maxWidth: '100%',
+    verticalAlign: 'middle',
     borderRadius: theme.shape.borderRadius,
     boxShadow: theme.shadows[4],
   },
@@ -94,25 +94,25 @@ function HeadSection(props) {
   return (
     <Fragment>
       <Grid container className={classes.container}>
-        <Grid item xs={12} md={5} style={{ display: "flex" }}>
+        <Grid item xs={12} md={5} style={{ display: 'flex' }}>
           <Box
             mb={1}
             mt={3}
             pl={3}
             pr={1}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <Typography
               variant="h3"
               style={{
-                fontFamily: "Quicksand",
+                fontFamily: 'Quicksand',
                 fontWeight: 500,
-                fontSize: "2rem",
+                fontSize: '2rem',
               }}
             >
               We help you to achieve, your fitness goal
@@ -121,7 +121,7 @@ function HeadSection(props) {
               Search for fresh, mouth-watering, & calories counted meal ends
               here
             </Typography>
-            <Button
+            {/* <Button
               variant="outlined"
               fullwidth
               className={classes.extraLargeButton}
@@ -131,14 +131,14 @@ function HeadSection(props) {
               rel="noopener noreferrer"
             >
               Let's Order Now
-            </Button>
+            </Button> */}
           </Box>
         </Grid>
         <Grid item xs={12} md={7}>
           <Box
             className={classes.higlightBox}
             style={
-              isWidthUp("md", width) ? { height: "70vh" } : { height: "50vh" }
+              isWidthUp('md', width) ? { height: '70vh' } : { height: '50vh' }
             }
           />
         </Grid>
