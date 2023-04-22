@@ -81,8 +81,8 @@ const styles = (theme) => ({
 const infos = [
   {
     icon: <WhatsAppIcon />,
-    description: '+91-9975690709',
-    href: 'https://wa.me/919975690709',
+    description: '+91-8793580502',
+    href: 'https://wa.me/8793580502',
   },
   {
     icon: <MailIcon />,
@@ -206,6 +206,29 @@ function Footer(props) {
                   </IconButton>
                 </Box>
               ))}
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <Box display="flex" mb={1} style={{ alignItems: 'baseline' }}>
+              {/* <Box mr={2}>
+                <IconButton className={classes.infoIcon} tabIndex={-1}>
+                  <FavoriteBorderIcon />
+                </IconButton>
+              </Box> */}
+              <Box display="flex" flexDirection="column">
+                <Typography variant="h6" className="text-white">
+                  Address
+                </Typography>
+              </Box>
+            </Box>
+            <Box display="flex" mb={1} style={{ alignItems: 'baseline' }}>
+              <Box display="flex" flexDirection="column">
+                <Typography variant="h7" className="text-white">
+                  Inside Silver Sports Club, Near by Mumbai-Bangalore Highway,
+                  Behind Vedanta Society, Shankar Kalat Nagar, Wakad, Pune,
+                  Maharashtra 411057
+                </Typography>
+              </Box>
             </Box>
           </Grid>
         </Grid>
