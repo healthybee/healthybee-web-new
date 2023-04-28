@@ -1,10 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Grid, Typography, withWidth } from "@material-ui/core";
+import { Grid, Typography, withWidth } from '@material-ui/core';
+
+import PropTypes from 'prop-types';
+import React from 'react';
 
 function Terms(props) {
   return (
-    <div style={{ backgroundColor: "#FFFFFF" }}>
+    <div style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container lg-p-top">
         <Grid container justify="center">
           <Grid item xs={12} sm={12} md={8}>
@@ -165,6 +166,31 @@ function Terms(props) {
                 </li>
                 <br />
 
+                <li>
+                  The minimum and maximum delivery times for food delivery can
+                  vary depending on the type of food being delivered, the
+                  distance between the restaurant and the customer, and the mode
+                  of delivery (e.g., self-delivery, third-party delivery
+                  service, etc.). However, there are some general guidelines
+                  that can be followed:
+                  <ol type="i">
+                    <li>
+                      Minimum Delivery Time: For most food deliveries, a minimum
+                      delivery time of 30 minutes is reasonable. This allows
+                      enough time for the restaurant to prepare the food and for
+                      the delivery person to reach the customer's location.
+                    </li>
+                    <li>
+                      Maximum Delivery Time: The maximum delivery time depends
+                      on several factors, including the distance between the
+                      restaurant and the customer's location, traffic
+                      conditions, and the delivery mode. However, in general, a
+                      maximum delivery time of 60 minutes is considered
+                      reasonable for most food deliveries.
+                    </li>
+                  </ol>
+                </li>
+                <br />
                 <li>
                   If you fail to accept delivery of Food at the time they are
                   ready for delivery or HealthyBee is unable to deliver at the

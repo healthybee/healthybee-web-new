@@ -17,7 +17,6 @@ import MailIcon from '@material-ui/icons/Mail';
 import PropTypes from 'prop-types';
 import React from 'react';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import { ReactComponent as Zomato } from '../../../icons/zomato-seeklogo.com.svg';
 import transitions from '@material-ui/core/styles/transitions';
 
 const styles = (theme) => ({
@@ -122,11 +121,6 @@ const socialIcons = [
       </svg>
     ),
     label: 'Instagram',
-    href: 'https://www.instagram.com/healthybee.fit/',
-  },
-  {
-    icon: <Zomato style={{ width: '24px', height: '24px' }} />,
-    label: 'Zomato',
     href: 'https://www.instagram.com/healthybee.fit/',
   },
 ];
